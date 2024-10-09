@@ -1,0 +1,17 @@
+[
+  {
+    "listing": "/note.html",
+    "items": [
+      "/notes/annotation.html",
+      "/notes/git.html",
+      "/notes/note_template.html"
+    ]
+  },
+  {
+    "listing": "/project.html",
+    "items": [
+      "/projects/kmeans.html",
+      "/projects/proj_template.html"
+    ]
+  }
+]
