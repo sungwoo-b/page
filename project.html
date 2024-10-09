@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
       searchColumns: ["listing-title","listing-date"],
     };
@@ -175,9 +175,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -228,7 +228,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Machine Learning,Statistics" data-listing-date-sort="1709856000000" data-listing-file-modified-sort="1728462866544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="Machine Learning,Statistics" data-listing-date-sort="1709856000000" data-listing-file-modified-sort="1728463599498" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
 <p><a href="./projects/kmeans.html" class="no-external"></a></p><a href="./projects/kmeans.html" class="no-external">
 <p><img loading="lazy" src="./img/barplot.png" class="thumbnail-image"></p>
@@ -240,6 +240,14 @@ window.Quarto = {
 </h3>
 <div class="listing-subtitle">
 <a href="./projects/kmeans.html" class="no-external">Implementing Algorithms in Python</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
+Statistics
+</div>
 </div>
 <div class="listing-description">
 <a href="./projects/kmeans.html" class="no-external">The implementation of K-Means and K-Medoid (PAM) clustering algorithms in Python to understand their workings, differences, and how they apply to data clustering tasks</a>
@@ -256,7 +264,7 @@ Sung Woo Bak
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Machine Learning,Statistics" data-listing-date-sort="1709769600000" data-listing-file-modified-sort="1728462866544" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="Machine Learning,Statistics" data-listing-date-sort="1709769600000" data-listing-file-modified-sort="1728463599498" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
 <p><a href="./projects/proj_template.html" class="no-external"></a></p><a href="./projects/proj_template.html" class="no-external">
 <p><img loading="lazy" src="./img/barplot.png" class="thumbnail-image"></p>
@@ -268,6 +276,14 @@ Sung Woo Bak
 </h3>
 <div class="listing-subtitle">
 <a href="./projects/proj_template.html" class="no-external">Template for Project Page</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Statistics'); return false;">
+Statistics
+</div>
 </div>
 <div class="listing-description">
 <a href="./projects/proj_template.html" class="no-external">Add Description</a>
