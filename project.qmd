@@ -3,6 +3,7 @@ title: "Project"
 listing:
   contents:
     - projects
+  categories: true
   sort:
     - "date desc"
     - "title asc"
