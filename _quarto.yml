@@ -11,7 +11,8 @@ website:
         text: Project
       - href: note.qmd
         text: Note
-      - about.qmd
+      - href: about.qmd
+        text: About
 
 format:
   html:
