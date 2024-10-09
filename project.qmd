@@ -1,0 +1,11 @@
+---
+title: "Project"
+listing:
+  contents:
+    - projects
+  sort:
+    - "date desc"
+    - "title asc"
+  sort-ui: [title, date]
+  filter-ui: [title, date]
+---

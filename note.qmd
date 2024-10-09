@@ -1,0 +1,12 @@
+---
+title: "Note"
+listing:
+  contents:
+    - notes
+  sort:
+    - "date desc"
+    - "title asc"
+  sort-ui: [title, date]
+  filter-ui: [title, date]
+---
+

@@ -1,0 +1,19 @@
+---
+title: "K-Means and K-Medoid"
+subtitle: "Implementing Algorithms in Python"
+description: "The implementation of K-Means and K-Medoid (PAM) clustering algorithms in Python to understand their workings, differences, and how they apply to data clustering tasks"
+date: 2024-03-08
+categories: ["Machine Learning", "Statistics"]
+tags: ["Compution Vision", "Annotation"]
+author: "Sung Woo Bak"
+draft: false
+image: "../img/barplot.png"
+layout: "article"
+toc: true
+slug: "template"
+keywords: ["machine learning", "AI", "data science"]
+---
+
+# title
+
+description
