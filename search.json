@@ -4,7 +4,7 @@
     "href": "note.html",
     "title": "Note",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nTemplate\n\n\nTemplate for Note Page\n\n\n\nMachine Learning\n\n\nStatistics\n\n\n\nAdd Description\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/kmeans.html",
@@ -18,14 +18,7 @@
     "href": "project.html",
     "title": "Project",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nK-Means and K-Medoid\n\n\nImplementing Algorithms in Python\n\n\n\nMachine Learning\n\n\nStatistics\n\n\n\nThe implementation of K-Means and K-Medoid (PAM) clustering algorithms in Python to understand their workings, differences, and how they apply to data clustering tasks\n\n\n\n\n\nMar 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nTemplate\n\n\nTemplate for Project Page\n\n\n\nMachine Learning\n\n\nStatistics\n\n\n\nAdd Description\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "notes/note_template.html",
-    "href": "notes/note_template.html",
-    "title": "Template",
-    "section": "",
-    "text": "title\ndescription"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nK-Means and K-Medoid\n\n\nImplementing Algorithms in Python\n\n\n\nMachine Learning\n\n\nStatistics\n\n\n\nThe implementation of K-Means and K-Medoid (PAM) clustering algorithms in Python to understand their workings, differences, and how they apply to data clustering tasks\n\n\n\n\n\nMar 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -54,12 +47,5 @@
     "title": "Sung Woo Bak",
     "section": "",
     "text": "American Red Cross Software Developer - Imagery Analysis September 2024 - present"
-  },
-  {
-    "objectID": "projects/proj_template.html",
-    "href": "projects/proj_template.html",
-    "title": "Template",
-    "section": "",
-    "text": "title\ndescription"
   }
 ]
