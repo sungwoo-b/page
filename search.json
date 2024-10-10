@@ -7,6 +7,27 @@
     "text": "Welcome to my personal page! I’m Sung Woo Bak, a recent graduate with a degree in Statistics.  Here, I’ll be sharing what I’ve learned throughout my journey in statistics and machine learning."
   },
   {
+    "objectID": "notes/python.html",
+    "href": "notes/python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Hello world!\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nmu, sigma = 0, 1  # mean and sd\nx = np.linspace(-5, 5, 100)\ny = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\n# Plot\nplt.plot(x, y, label=\"N(0, 1)\")\nplt.title(\"Normal Distribution N(0, 1)\")\nplt.xlabel(\"X\")\nplt.ylabel(\"Probability Density\")\nplt.legend()\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "note.html",
+    "href": "note.html",
+    "title": "Note",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPython\n\n\nTesting Python Code\n\n\n\nPython\n\n\n\nThis note is to check the compatibility between Quarto and Python\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nTesting R Code\n\n\n\nStatistics\n\n\nR\n\n\n\nThis note is to check the compatibility between Quarto and R\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Sung Woo Bak",
@@ -26,20 +47,6 @@
     "title": "Sung Woo Bak",
     "section": "",
     "text": "American Red Cross Software Developer - Imagery Analysis September 2024 - present"
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Project",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
-    "objectID": "note.html",
-    "href": "note.html",
-    "title": "Note",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nR\n\n\nTesting R Code\n\n\n\nStatistics\n\n\nR\n\n\n\nThis note is to check the compatibility between Quarto and R\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notes/R.html",
