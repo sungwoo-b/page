@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aloha",
+    "section": "",
+    "text": "Welcome to my personal page! I’m Sung Woo Bak, a recent graduate with a degree in Statistics.  Here, I’ll be sharing what I’ve learned throughout my journey in statistics and machine learning."
+  },
+  {
     "objectID": "note.html",
     "href": "note.html",
     "title": "Note",
@@ -7,25 +14,11 @@
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/kmeans.html",
-    "href": "projects/kmeans.html",
-    "title": "K-Means and K-Medoid",
-    "section": "",
-    "text": "title\ndescription"
-  },
-  {
     "objectID": "project.html",
     "href": "project.html",
     "title": "Project",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nK-Means and K-Medoid\n\n\nImplementing Algorithms in Python\n\n\n\nMachine Learning\n\n\nStatistics\n\n\n\nThe implementation of K-Means and K-Medoid (PAM) clustering algorithms in Python to understand their workings, differences, and how they apply to data clustering tasks\n\n\n\n\n\nMar 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Aloha",
-    "section": "",
-    "text": "Welcome to my personal page! I’m Sung Woo Bak, a recent graduate with a degree in Statistics.  Here, I’ll be sharing what I’ve learned throughout my journey in statistics and machine learning."
+    "text": "No matching items"
   },
   {
     "objectID": "about.html",

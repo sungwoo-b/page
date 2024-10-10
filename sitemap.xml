@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sungwoo-b.github.io/page/note.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
+    <loc>https://sungwoo-b.github.io/page/index.html</loc>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
   </url>
   <url>
-    <loc>https://sungwoo-b.github.io/page/projects/kmeans.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
+    <loc>https://sungwoo-b.github.io/page/note.html</loc>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
   </url>
   <url>
     <loc>https://sungwoo-b.github.io/page/project.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/notes/git.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/notes/annotation.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/index.html</loc>
-    <lastmod>2024-10-09T10:40:20.951Z</lastmod>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
   </url>
   <url>
     <loc>https://sungwoo-b.github.io/page/about.html</loc>
-    <lastmod>2024-10-09T10:40:20.949Z</lastmod>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/notes/git.html</loc>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/notes/annotation.html</loc>
+    <lastmod>2024-10-10T09:52:12.539Z</lastmod>
   </url>
 </urlset>
