@@ -6,11 +6,10 @@ date: 2024-03-08
 categories: ["Machine Learning", "Statistics"]
 tags: ["Compution Vision", "Annotation"]
 author: "Sung Woo Bak"
-draft: false
+draft: true
 image: "../img/barplot.png"
 layout: "article"
 toc: true
-slug: "template"
 keywords: ["machine learning", "AI", "data science"]
 ---
 
