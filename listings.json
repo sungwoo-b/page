@@ -1,13 +1,14 @@
 [
   {
+    "listing": "/project.html",
+    "items": []
+  },
+  {
     "listing": "/note.html",
     "items": [
+      "/notes/R.html",
       "/notes/annotation.html",
       "/notes/git.html"
     ]
-  },
-  {
-    "listing": "/project.html",
-    "items": []
   }
 ]

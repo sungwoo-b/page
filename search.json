@@ -7,20 +7,6 @@
     "text": "Welcome to my personal page! I’m Sung Woo Bak, a recent graduate with a degree in Statistics.  Here, I’ll be sharing what I’ve learned throughout my journey in statistics and machine learning."
   },
   {
-    "objectID": "note.html",
-    "href": "note.html",
-    "title": "Note",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Project",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Sung Woo Bak",
@@ -40,5 +26,40 @@
     "title": "Sung Woo Bak",
     "section": "",
     "text": "American Red Cross Software Developer - Imagery Analysis September 2024 - present"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "note.html",
+    "href": "note.html",
+    "title": "Note",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nR\n\n\nTesting R Code\n\n\n\nStatistics\n\n\nR\n\n\n\nThis note is to check the compatibility between Quarto and R\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notes/R.html",
+    "href": "notes/R.html",
+    "title": "R",
+    "section": "",
+    "text": "head(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "notes/R.html#data",
+    "href": "notes/R.html#data",
+    "title": "R",
+    "section": "",
+    "text": "head(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
+  },
+  {
+    "objectID": "notes/R.html#plot",
+    "href": "notes/R.html#plot",
+    "title": "R",
+    "section": "Plot",
+    "text": "Plot\n\nggplot(mtcars, aes(x = hp, y = mpg)) +\n  geom_point(color = \"blue\") +\n  geom_smooth(method = \"lm\", color = \"red\") +\n  labs(title = \"Horsepower vs. MPG\", x = \"Horsepower (hp)\", y = \"Miles per Gallon (mpg)\")"
   }
 ]
