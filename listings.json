@@ -10,6 +10,8 @@
   },
   {
     "listing": "/project.html",
-    "items": []
+    "items": [
+      "/projects/telemetry.html"
+    ]
   }
 ]
