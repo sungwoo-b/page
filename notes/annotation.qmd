@@ -8,7 +8,6 @@ tags: ["Compution Vision"]
 author: "Sung Woo Bak"
 draft: false
 image: "../img/anno.png"
-image-height: "200px"
 layout: "article"
 toc: true
 slug: "image-labeling"

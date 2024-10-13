@@ -7,7 +7,6 @@ categories: ["R"]
 author: "Sung Woo Bak"
 draft: false
 image: "../img/r.png"
-image-height: "200px"
 layout: "article"
 toc: true
 ---

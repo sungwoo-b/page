@@ -3,11 +3,11 @@ title: "Sea Ice Concentration and Penguin Telemetry"
 subtitle: "Geospatial Data Analysis"
 description: "This is the part of tutorial that introduces the use of geospatial data."
 date: 2024-03-07
-categories: ["Statistics"]
+categories: ["Statistics", "Python"]
 tags: ["Remote Sensing", "Geospatial"]
 author: "Sung Woo Bak"
 draft: false
-image: "../img/barplot.png"
+image: "../img/southpole.png"
 layout: "article"
 toc: true
 ---
@@ -44,6 +44,7 @@ Link: https://polarwatch.noaa.gov/erddap/griddap/nsidcG02202v4shmday.html
 #| echo: false
 #| warning: false
 #| message: false
+#| results: 'hide'
 
 # Generate URL
 def point_to_dataset(dataset_id, base_url='https://polarwatch.noaa.gov/erddap/griddap'):
@@ -56,12 +57,12 @@ south_month_url = 'nsidcG02202v4shmday' # Monthly
 
 # Data
 da = point_to_dataset(south_month_url)
-print(da)
+
 ```
 
 
 ```{python}
-#| echo: true
+#| echo: false
 #| warning: false
 #| message: false
 #| results: 'hide'

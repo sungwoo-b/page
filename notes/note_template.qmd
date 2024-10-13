@@ -8,7 +8,6 @@ tags: ["Compution Vision", "Annotation"]
 author: "Sung Woo Bak"
 draft: true
 image: "../img/barplot.png"
-image-height: "200px"
 layout: "article"
 toc: true
 slug: "template"

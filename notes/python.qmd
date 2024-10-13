@@ -7,7 +7,6 @@ categories: ["Python"]
 author: "Sung Woo Bak"
 draft: false
 image: "../img/python.png"
-image-height: "200px"
 layout: "article"
 toc: true
 ---
