@@ -3,11 +3,11 @@ title: "R"
 subtitle: "Testing R Code"
 description: "This note is to check the compatibility between Quarto and R"
 date: 2024-10-10
-categories: ["Statistics", "R"]
-tags: ["Regression"]
+categories: ["R"]
 author: "Sung Woo Bak"
 draft: false
 image: "../img/r.png"
+image-height: "200px"
 layout: "article"
 toc: true
 ---
