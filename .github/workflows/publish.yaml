@@ -42,7 +42,9 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas numpy matplotlib plotly seaborn pyyaml jupyter
+          pip install pandas numpy matplotlib plotly seaborn pyyaml jupyter 
+          pip install cartopy xarray
+          pip install netCDF4 cftime IPython
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
