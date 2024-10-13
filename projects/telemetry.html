@@ -23,40 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -176,6 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p class="subtitle lead">Geospatial Data Analysis</p>
   <div class="quarto-categories">
     <div class="quarto-category">Statistics</div>
+    <div class="quarto-category">Python</div>
   </div>
   </div>
 
@@ -214,100 +181,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Sea Ice Concentration Data</h1>
 <p>Note: Monthly Sea Ice Concentration Data from October 1996 to April 2013.</p>
 <p>Link: https://polarwatch.noaa.gov/erddap/griddap/nsidcG02202v4shmday.html</p>
-<div id="2a4eee4f" class="cell" data-message="false" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'netCDF4._netCDF4.Dataset'&gt;
-root group (NETCDF3_CLASSIC data model, file format DAP2):
-    _NCProperties: version=2,netcdf=4.8.1,hdf5=1.10.6
-    acknowledgement: This project was supported in part by a grant from the NOAA Climate Data Record Program. Production of original NASA Team and Bootstrap algorithm estimates supported by the NASA Polar Distributed Active Archive Center. The sea ice concentration algorithms were developed by Donald J. Cavalieri, Josefino C. Comiso, Claire L. Parkinson, and others at the NASA Goddard Space Flight Center in Greenbelt, MD.
-    cdm_data_type: Grid
-    cdr_variable: cdr_seaice_conc_monthly
-    contributor_name: Walter N. Meier, Florence Fetterer, Ann Windnagel, J. Scott Stewart, Trey Stafford, Matt Fisher
-    contributor_role: principal investigator, author, author, software developer, software developer, software developer
-    Conventions: CF-1.6, ACDD-1.3, COARDS
-    creator_email: nsidc@nsidc.org
-    creator_name: NSIDC
-    creator_type: institution
-    creator_url: https://nsidc.org/
-    date_created: 2024-08-05T20:55:49Z
-    defaultGraphQuery: cdr_seaice_conc_monthly%5Blast%5D%5B(4337500.0):(-3937500.0)%5D%5B(-3937500.0):(3937500.0)%5D&amp;.draw=surface
-    grid_mapping_false_easting: 0.0
-    grid_mapping_false_northing: 0.0
-    grid_mapping_GeoTransform: -3950000.0 25000.0 0 4350000.0 0 -25000.0
-    grid_mapping_grid_boundary_bottom_projected_y: -3950000.0
-    grid_mapping_grid_boundary_left_projected_x: -3950000.0
-    grid_mapping_grid_boundary_right_projected_x: 3950000.0
-    grid_mapping_grid_boundary_top_projected_y: 4350000.0
-    grid_mapping_latitude_of_projection_origin: -90.0
-    grid_mapping_longitude_of_projection_origin: 0.0
-    grid_mapping_name: polar_stereographic
-    grid_mapping_parent_grid_cell_column_subset_end: 316.0
-    grid_mapping_parent_grid_cell_column_subset_start: 0.0
-    grid_mapping_parent_grid_cell_row_subset_end: 332.0
-    grid_mapping_parent_grid_cell_row_subset_start: 0.0
-    grid_mapping_proj4text: +proj=stere +lat_0=-90 +lat_ts=-70 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378273 +b=6356889.449 +units=m +no_defs
-    grid_mapping_scaling_factor: 1.0
-    grid_mapping_semimajor_radius: 6378273.0
-    grid_mapping_semiminor_radius: 6356889.449
-    grid_mapping_spatial_ref: PROJCS["NSIDC Sea Ice Polar Stereographic South",GEOGCS["Unspecified datum based upon the Hughes 1980 ellipsoid",DATUM["Not_specified_based_on_Hughes_1980_ellipsoid",SPHEROID["Hughes 1980",6378273,298.279411123061,AUTHORITY["EPSG","7058"]],AUTHORITY["EPSG","6054"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4054"]],UNIT["metre",1,AUTHORITY["EPSG","9001"]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",-70],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],AUTHORITY["EPSG","3412"],AXIS["X",UNKNOWN],AXIS["Y",UNKNOWN]]
-    grid_mapping_srid: urn:ogc:def:crs:EPSG::3412
-    grid_mapping_standard_parallel: -70.0
-    grid_mapping_straight_vertical_longitude_from_pole: 180.0
-    grid_mapping_units: meters
-    history: Tue Jan  5 13:40:25 2021: ncks -x -v goddard_merged_seaice_conc_monthly ./previous_blank_ncs/S_monthly_blank.nc ./S_monthly_blank.nc
-2024-10-13T12:07:30Z (local files)
-2024-10-13T12:07:30Z https://polarwatch.noaa.gov/erddap/griddap/nsidcG02202v4shmday.das
-    id: https://doi.org/10.7265/sr8p-kc62
-    infoUrl: https://nsidc.org/data/g02202/versions/4/
-    institution: NSIDC &gt; National Snow and Ice Data Center
-    keywords: algorithm, area, bellingshausen, bootstrap, cdr_seaice_conc_monthly, center, climate, common, concentration, cryosphere, data, defense, deviation, distribution, dmsp, earth, Earth Science &gt; Cryosphere &gt; Sea Ice &gt; Ice Extent, Earth Science &gt; Cryosphere &gt; Sea Ice &gt; Sea Ice Concentration, Earth Science &gt; Oceans &gt; Sea Ice &gt; Ice Extent, estimated, extent, flag, flags, flight, format, fraction, geographic, Geographic Region &gt; Polar, Geographic Region &gt; Southern Hemisphere, goddard, gsfc, hemisphere, ice, ice distribution, meteorological, microwave, month, monthly, nasa, national, network, noaa, noaa/nsidc, nsidc, nsidc_bt_seaice_conc_monthly, nsidc_nt_seaice_conc_monthly, ocean, Ocean &gt; Southern Ocean, Ocean &gt; Southern Ocean &gt; Bellingshausen Sea, Ocean &gt; Southern Ocean &gt; Ross Sea, Ocean &gt; Southern Ocean &gt; Weddell Sea, oceans, passive, polar, processed, program, qa_of_cdr_seaice_conc_monthly, quality, record, region, ross, satellite, science, sea, sea_ice_area_fraction, sea_ice_area_fraction status_flag, snow, source, southern, space, standard, statistics, status, stdev_of_cdr_seaice_conc_monthly, tdim, team, version, weddell
-    keywords_vocabulary: GCMD Science Keywords
-    license: No constraints on data access or use
-    metadata_link: https://nsidc.org/data/g02202/versions/4/
-    naming_authority: org.doi.dx
-    NCO: "4.5.4"
-    platform: DMSP 5D-3/F17 &gt; Defense Meteorological Satellite Program-F17
-    processing_level: NOAA Level 3
-    product_version: v04r00
-    program: NOAA Climate Data Record Program
-    proj_crs_code: EPSG:3412
-    proj_crs_code_description: The proj_crs_code attribute references a registered projection identifier (i.e. EPSG) when available. If the projection is not registered, non-standard then this attribute references a PolarWatch assigned internal identifier.
-    project: NOAA/NSIDC passive microwave sea ice concentration climate data record
-    references: Comiso, J. C., and F. Nishio. 2008. Trends in the Sea Ice Cover Using Enhanced and Compatible AMSR-E, SSM/I, and SMMR Data. Journal of Geophysical Research 113, C02S07, doi:10.1029/2007JC0043257. ; Comiso, J. C., D. Cavalieri, C. Parkinson, and P. Gloersen. 1997. Passive Microwave Algorithms for Sea Ice Concentrations: A Comparison of Two Techniques. Remote Sensing of the Environment 60(3):357-84. ; Comiso, J. C. 1984. Characteristics of Winter Sea Ice from Satellite Multispectral Microwave Observations. Journal of Geophysical Research 91(C1):975-94. ; Cavalieri, D. J., P. Gloersen, and W. J. Campbell. 1984. Determination of Sea Ice Parameters with the NIMBUS-7 SMMR. Journal of Geophysical Research 89(D4):5355-5369. ; Cavalieri, D. J., C. l. Parkinson, P. Gloersen, J. C. Comiso, and H. J. Zwally. 1999. Deriving Long-term Time Series of Sea Ice Cover from Satellite Passive-Microwave Multisensor Data Sets. Journal of Geophysical Research 104(7):   15,803-15,814. ; Comiso, J.C., R.A. Gersten, L.V. Stock, J. Turner, G.J. Perez, and K. Cho. 2017. Positive Trend in the Antarctic Sea Ice Cover and Associated Changes in Surface Temperature. J. Climate, 30, 2251?2267, https://doi.org/10.1175/JCLI-D-16-0408.1
-    sensor: SSMI/S &gt; Special Sensor Microwave Imager/Sounder
-    software_version_id: git@bitbucket.org:nsidc/seaice_cdr.git@a11f275ee7ada7a9cdadada1b3d252de674d624f
-    source: ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240301_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240302_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240303_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240304_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240305_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240306_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240307_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240308_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240309_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240310_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240311_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240312_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240313_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240314_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240315_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240316_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240317_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240318_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240319_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240320_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240321_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240322_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240323_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240324_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240325_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240326_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240327_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240328_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240329_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240330_f17_v04r00.nc, ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G02202_V4/south/daily/2024/seaice_conc_daily_sh_20240331_f17_v04r00.nc
-    sourceUrl: (local files)
-    spatial_resolution: 25km
-    standard_name_vocabulary: CF Standard Name Table v70
-    summary: This data set provides a passive microwave sea ice concentration climate data record (CDR) based on gridded brightness temperatures (TBs) from the Defense Meteorological Satellite Program (DMSP) series of passive microwave radiometers: the Nimbus-7 Scanning Multichannel Microwave Radiometer (SMMR), the Special Sensor Microwave Imager (SSM/I) and the Special Sensor Microwave Imager/Sounder (SSMIS). The sea ice concentration CDR is an estimate of sea ice concentration that is produced by combining concentration estimates from two algorithms developed at the NASA Goddard Space Flight Center (GSFC): the NASA Team algorithm and the Bootstrap algorithm. The individual algorithms are used to process and combine brightness temperature data at National Snow and Ice Data Center (NSIDC).  This product is designed to provide a consistent time series of sea ice concentrations (the fraction, or percentage, of ocean area covered by sea ice) from November 1978 to the present which spans the coverage of several passive microwave instruments. The data are gridded on the NSIDC polar stereographic grid with 25 x 25 km grid cells, and are available in Network Common Data Format (NetCDF) file format. Each file contains a variable with the CDR concentration values as well as variables that hold the NASA Team and Bootstrap concentrations for reference. Variables containing standard deviation, quality flags, and projection information are also included. Data are available from NSIDC via FTP see https://nsidc.org/data/G02202/versions/4/. Data are also distributed via the PolarWatch ERDDAP at https://polarwatch.noaa.gov/erddap. Note that the data format available through PolarWatch is different from the NSIDC FTP NetCDF files. The PolarWatch data server stores projection information as global attributes (with the prefix grid_mapping) instead of as a variable; and the timestamp is served in different units (seconds since 1970).
-    time_coverage_duration: P1M
-    time_coverage_end: 2024-03-01T00:00:00Z
-    time_coverage_resolution: P1M
-    time_coverage_start: 1978-11-01T00:00:00Z
-    title: Sea Ice Concentration, NOAA/NSIDC Climate Data Record V4, Southern Hemisphere, 25km, Science Quality, 1978-Present, Monthly
-    dimensions(sizes): time(545), xgrid(316), ygrid(332)
-    variables(dimensions): float64 time(time), float32 ygrid(ygrid), float32 xgrid(xgrid), float32 cdr_seaice_conc_monthly(time, ygrid, xgrid), float32 nsidc_bt_seaice_conc_monthly(time, ygrid, xgrid), float32 nsidc_nt_seaice_conc_monthly(time, ygrid, xgrid), int8 qa_of_cdr_seaice_conc_monthly(time, ygrid, xgrid), float32 stdev_of_cdr_seaice_conc_monthly(time, ygrid, xgrid)
-    groups: </code></pre>
-</div>
-</div>
-<div id="cc092fe2" class="cell" data-message="false" data-results="hide" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check Time</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> da.variables[<span class="st">'time'</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>seaice_concen <span class="op">=</span> da.variables[<span class="st">'cdr_seaice_conc_monthly'</span>][:]</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Covent time format</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>time_val <span class="op">=</span> nc.num2date(time[:], units<span class="op">=</span>time.units, calendar<span class="op">=</span>time.calendar)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sample_time <span class="op">=</span> cftime.DatetimeGregorian(<span class="dv">1996</span>, <span class="dv">10</span>, <span class="dv">1</span>) <span class="co"># Desired time</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>time_ind <span class="op">=</span> np.where(time_val <span class="op">==</span> sample_time)[<span class="dv">0</span>]     <span class="co"># Find matching indices</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>sample_sea_ice <span class="op">=</span> seaice_concen[time_ind, :, :][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="south-polar-projections" class="level1">
 <h1>South Polar Projections</h1>
 <p><strong>SouthPolarStereo()</strong></p>
-<div id="f1cdca15" class="cell" data-message="false" data-execution_count="4">
+<div id="b4a2a486" class="cell" data-message="false" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Text(0.5, 1.0, 'Ice Concentration using Cartopy Projection SouthPolarStereo()')</code></pre>
 </div>
@@ -320,7 +198,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 <p><strong>EPSG Code 3412</strong></p>
-<div id="a760cd9e" class="cell" data-execution_count="5">
+<div id="df2b37e2" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -332,7 +210,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </section>
 <section id="adelie-penguin-telemetry-data" class="level1">
 <h1>Adelie Penguin Telemetry Data</h1>
-<div id="a90d9d1f" class="cell" data-execution_count="6">
+<div id="ad9cff08" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -419,7 +297,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 </div>
-<div id="260a2d7e" class="cell" data-execution_count="7">
+<div id="0700a111" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array(['1996-10', '1996-11', '1997-10', '1997-11', '1997-12', '2002-01',
        '2002-02', '2002-03', '2003-01', '2003-02', '2003-03', '2004-01',
@@ -431,7 +309,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 <p><strong>Distribution of Penguins</strong></p>
-<div id="72ecfca5" class="cell" data-execution_count="8">
+<div id="8804f094" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -441,7 +319,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 <p><strong>Location of Penguins on the Projected Map</strong></p>
-<div id="7b3b6b4e" class="cell" data-execution_count="9">
+<div id="a9f50d12" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -450,7 +328,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 </div>
-<div id="7d424d72" class="cell" data-message="false" data-execution_count="10">
+<div id="617d83c8" class="cell" data-message="false" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -460,7 +338,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 <p><strong>Penguin Movements</strong></p>
-<div id="5e65931b" class="cell" data-message="false" data-execution_count="11">
+<div id="d13f2301" class="cell" data-message="false" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -469,7 +347,7 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 </div>
 </div>
 </div>
-<div id="ea573171" class="cell" data-message="false" data-execution_count="12">
+<div id="8205d5a1" class="cell" data-message="false" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -482,12 +360,12 @@ root group (NETCDF3_CLASSIC data model, file format DAP2):
 <section id="monthly-tracking-with-sea-ice-concentration" class="level1">
 <h1>Monthly Tracking with Sea Ice Concentration</h1>
 <p><strong>Bird ID ADPE24 (Female)</strong></p>
-<div id="efb09f03" class="cell" data-message="false" data-execution_count="14">
+<div id="69dbd2e6" class="cell" data-message="false" data-execution_count="14">
 <div class="cell-output cell-output-stdout">
 <pre><code>['2003-01' '2003-02' '2003-03']</code></pre>
 </div>
 </div>
-<div id="d7c73853" class="cell" data-message="false" data-results="hide" data-execution_count="15">
+<div id="3e00bc3b" class="cell" data-message="false" data-results="hide" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
