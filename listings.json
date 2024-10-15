@@ -11,7 +11,8 @@
   {
     "listing": "/project.html",
     "items": [
-      "/projects/telemetry.html"
+      "/projects/geospatial.html",
+      "/projects/hp.html"
     ]
   }
 ]
