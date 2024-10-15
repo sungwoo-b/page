@@ -1,7 +1,7 @@
 ---
 title: "Housing Passports"
 subtitle: "In the Indonesian Context  – In Progress"
-description: "Developing a software that detects buildings vulnable to natural disasters using street-view images."
+description: "Developing automated tools using street level imagery"
 date: 2024-09-01
 categories: ["Machine Learning", "Compution Vision"]
 author: "Sung Woo Bak"
