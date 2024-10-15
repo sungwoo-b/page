@@ -1,6 +1,6 @@
 ---
 title: "R"
-subtitle: "Testing R Code"
+subtitle: "Testing R Compatibility"
 description: "This note is to check the compatibility between Quarto and R"
 date: 2024-9-10
 categories: ["R"]

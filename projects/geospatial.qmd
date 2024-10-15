@@ -99,7 +99,8 @@ There are methods to represent the spherical Earth on a flat surface. Using the 
 
 **I. Polar Stereographic Projection**
 
-The Polar Stereographic Projection is a projection method centered on the polar regions, and in this case, it is centered on the South Pole.
+The Polar Stereographic Projection is a projection method centered on the polar regions.<br>
+In this case, it is centered on the South Pole.
 
 Details about the Polar Stereographic Projection can be found from the link below.
 
@@ -534,6 +535,6 @@ plt.tight_layout()
 plt.show()
 
 ```
-As shown above, ADPE24 has data from January to March 2003, and it traveled from the island towards areas with higher sea ice concentrations. The sea ice concentration varies by month, and it is clear that ADPE24 follows these changes. Although this is just one example, it suggests that there is a relationship between sea ice and penguin movement patterns.
+As shown above, ADPE24 has data from January to March 2003, and it traveled from the island towards areas with higher sea ice concentrations. The sea ice concentration varies by month, and it is clear that ADPE24 follows these changes. Although this is just one sample, it suggests that there is a relationship between sea ice and penguin movement patterns.
 
-Note: To ensure safety during publishing, only limited data (downloaded version) was used, displaying just a single example.
+Note: To ensure safety during publishing, limited data was used, displaying just a single sample.

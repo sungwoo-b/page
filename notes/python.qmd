@@ -1,6 +1,6 @@
 ---
 title: "Python"
-subtitle: "Testing Python Code"
+subtitle: "Testing Python Compatibility"
 description: "This note is to check the compatibility between Quarto and Python"
 date: 2024-9-10
 categories: ["Python"]
