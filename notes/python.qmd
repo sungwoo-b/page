@@ -2,7 +2,7 @@
 title: "Python"
 subtitle: "Testing Python Code"
 description: "This note is to check the compatibility between Quarto and Python"
-date: 2024-10-10
+date: 2024-9-10
 categories: ["Python"]
 author: "Sung Woo Bak"
 draft: false

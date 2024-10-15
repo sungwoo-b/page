@@ -2,7 +2,7 @@
 title: "R"
 subtitle: "Testing R Code"
 description: "This note is to check the compatibility between Quarto and R"
-date: 2024-10-10
+date: 2024-9-10
 categories: ["R"]
 author: "Sung Woo Bak"
 draft: false
