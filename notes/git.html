@@ -119,8 +119,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git">Git</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#basic-git-commands" id="toc-basic-git-commands" class="nav-link" data-scroll-target="#basic-git-commands">2. <strong>Basic Git Commands</strong></a></li>
+  <li><a href="#branch" id="toc-branch" class="nav-link" data-scroll-target="#branch">3. <strong>Branch</strong></a></li>
+  <li><a href="#remote-repository-commands" id="toc-remote-repository-commands" class="nav-link" data-scroll-target="#remote-repository-commands">4. <strong>Remote Repository Commands</strong></a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#ssh" id="toc-ssh" class="nav-link" data-scroll-target="#ssh">SSH</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,8 +185,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Referenced from <a href="https://education.github.com/git-cheat-sheet-education.pdf">GitHub Education</a></p>
+<section id="git" class="level1">
+<h1>Git</h1>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">1. Setup</h3>
+<ul>
+<li><strong><code>git config --global user.name "Firstname Lastname"</code></strong>
+<ul>
+<li>Set a name</li>
+<li>Example: <code>git config --global user.name "Sung Woo Bak"</code></li>
+</ul></li>
+<li><strong><code>git config --global user.email “email address”</code></strong>
+<ul>
+<li>Set an email</li>
+</ul></li>
+</ul>
+</section>
+<section id="basic-git-commands" class="level3">
+<h3 class="anchored" data-anchor-id="basic-git-commands">2. <strong>Basic Git Commands</strong></h3>
+<ul>
+<li><strong><code>git init</code></strong>
+<ul>
+<li>Initialize a new Git repository</li>
+</ul></li>
+<li><strong><code>git clone url</code></strong>
+<ul>
+<li>Retrieve an entire repository from a hosted location via URL</li>
+<li>Example: <code>git clone https://github.com/sungwoo-b/repository.git</code></li>
+</ul></li>
+<li><strong><code>git status</code></strong>
+<ul>
+<li>Show modified files in working directory, staged for your next commit</li>
+</ul></li>
+<li><strong><code>git add file_name</code></strong>
+<ul>
+<li>add a file as it looks now to your next commit (stage)</li>
+<li>Example: <code>git add file.txt</code></li>
+<li>To add all files: <code>git add .</code></li>
+</ul></li>
+<li><strong><code>git reset file_name</code></strong>
+<ul>
+<li>Unstage a file while retaining the changes in working directory</li>
+</ul></li>
+<li><strong><code>git commit -m "commit message"</code></strong>
+<ul>
+<li>Saves the changes to the repository with a descriptive message</li>
+</ul></li>
+<li><strong><code>git push alias branch</code></strong>
+<ul>
+<li>Upload the changes to the remote repository</li>
+<li>Example: <code>git push origin main</code></li>
+</ul></li>
+<li><strong><code>git pull</code></strong>
+<ul>
+<li>Download the latest changes and merges them into your local branch</li>
+<li>Example: <code>git pull</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="branch" class="level3">
+<h3 class="anchored" data-anchor-id="branch">3. <strong>Branch</strong></h3>
+<ul>
+<li><strong><code>git branch</code></strong>
+<ul>
+<li>Display a list of branches</li>
+</ul></li>
+<li><strong><code>git branch branch_name</code></strong>
+<ul>
+<li>Create a new branch at the current commit</li>
+</ul></li>
+<li><strong><code>git checkout branch</code></strong>
+<ul>
+<li>Change the current working branch</li>
+<li>Example: <code>git checkout another_branch</code></li>
+</ul></li>
+<li><strong><code>git log</code></strong>
+<ul>
+<li>show all commits in the current branch’s history</li>
+</ul></li>
+</ul>
+</section>
+<section id="remote-repository-commands" class="level3">
+<h3 class="anchored" data-anchor-id="remote-repository-commands">4. <strong>Remote Repository Commands</strong></h3>
+<ul>
+<li><strong><code>git remote add &lt;name&gt; &lt;url&gt;</code></strong>: Adds a remote repository.
+<ul>
+<li>Links a remote repository with a name (e.g., origin) and URL.</li>
+<li>Example: <code>git remote add origin https://github.com/user/repository.git</code></li>
+</ul></li>
+<li><strong><code>git remote -v</code></strong>: Shows the remote repository URLs.
+<ul>
+<li>Displays the URLs of the remote repositories connected to your local repository.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<pre><code>cd working_dir
+git pull
+git status
+git add .
+git commit -m "commit message"
+git push origin main</code></pre>
+</section>
+</section>
+<section id="ssh" class="level1">
+<h1>SSH</h1>
+<p>Referenced from <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub Docs</a></p>
+<p>Using Git Bash</p>
+<p><strong>1. Generate SSH key</strong></p>
+<p><code>ssh-keygen -t ed25519-sk -C "your_email@example.com"</code></p>
+<p><strong>2. Add Passphrase</strong></p>
+<p><strong>3. Copy Public key</strong></p>
+<p><code>clip &lt; ~/.ssh/id_ed25519.pub</code></p>
+<p><strong>4. Add to GitHub</strong></p>
+<p>Settings - Add new SSH key</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

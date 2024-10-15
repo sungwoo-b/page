@@ -1,18 +1,18 @@
 [
   {
+    "listing": "/project.html",
+    "items": [
+      "/projects/geospatial.html",
+      "/projects/hp.html"
+    ]
+  },
+  {
     "listing": "/note.html",
     "items": [
       "/notes/python.html",
       "/notes/R.html",
       "/notes/annotation.html",
       "/notes/git.html"
-    ]
-  },
-  {
-    "listing": "/project.html",
-    "items": [
-      "/projects/geospatial.html",
-      "/projects/hp.html"
     ]
   }
 ]

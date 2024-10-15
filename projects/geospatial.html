@@ -126,10 +126,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sea-ice-concentration-data" id="toc-sea-ice-concentration-data" class="nav-link active" data-scroll-target="#sea-ice-concentration-data">Sea Ice Concentration Data</a></li>
+  <li><a href="#sea-ice-concentration-data" id="toc-sea-ice-concentration-data" class="nav-link active" data-scroll-target="#sea-ice-concentration-data">Sea Ice Concentration Data</a>
+  <ul class="collapse">
   <li><a href="#south-polar-projections" id="toc-south-polar-projections" class="nav-link" data-scroll-target="#south-polar-projections">South Polar Projections</a></li>
-  <li><a href="#adelie-penguin-telemetry-data" id="toc-adelie-penguin-telemetry-data" class="nav-link" data-scroll-target="#adelie-penguin-telemetry-data">Adelie Penguin Telemetry Data</a></li>
-  <li><a href="#penguin-locations-on-the-projected-map" id="toc-penguin-locations-on-the-projected-map" class="nav-link" data-scroll-target="#penguin-locations-on-the-projected-map">Penguin Locations on the Projected Map</a></li>
+  </ul></li>
+  <li><a href="#adelie-penguin-telemetry-data" id="toc-adelie-penguin-telemetry-data" class="nav-link" data-scroll-target="#adelie-penguin-telemetry-data">Adelie Penguin Telemetry Data</a>
+  <ul class="collapse">
+  <li><a href="#the-distribution-of-penguins" id="toc-the-distribution-of-penguins" class="nav-link" data-scroll-target="#the-distribution-of-penguins">The Distribution of Penguins</a></li>
+  </ul></li>
+  <li><a href="#penguin-locations-on-the-projected-map" id="toc-penguin-locations-on-the-projected-map" class="nav-link" data-scroll-target="#penguin-locations-on-the-projected-map">Penguin Locations on the Projected Map</a>
+  <ul class="collapse">
+  <li><a href="#penguin-tracking-considering-various-factors" id="toc-penguin-tracking-considering-various-factors" class="nav-link" data-scroll-target="#penguin-tracking-considering-various-factors">Penguin Tracking Considering Various Factors</a></li>
+  </ul></li>
   <li><a href="#monthly-tracking-with-sea-ice-concentration" id="toc-monthly-tracking-with-sea-ice-concentration" class="nav-link" data-scroll-target="#monthly-tracking-with-sea-ice-concentration">Monthly Tracking with Sea Ice Concentration</a></li>
   </ul>
 </nav>
@@ -181,14 +189,13 @@ ul.task-list li input[type="checkbox"] {
 <p>The surface of Antarctica is largely covered by sea ice, and its area changes over time. This project aims to explore how these changes are related to the movement patterns of penguins, one of the continent’s representative species, as seasonal variations in sea ice may impact their behavior and migration patterns.</p>
 <section id="sea-ice-concentration-data" class="level1">
 <h1>Sea Ice Concentration Data</h1>
-<p>Sea Ice Concentration data is obtained from the NOAA Polar Watch ERDDAP Data Server and NetCDF format data was used in this project. This data includes time, coordinates, and Sea Ice Concentration data.</p>
+<p>Sea Ice Concentration data was obtained from the NOAA Polar Watch ERDDAP Data Server and NetCDF format data was used in this project. This data includes time, coordinates, and Sea Ice Concentration data.</p>
 <p>Data and its details can be accessed through the link below.</p>
 <ul>
 <li>https://polarwatch.noaa.gov/erddap/griddap/nsidcG02202v4shmday.html</li>
 </ul>
-</section>
-<section id="south-polar-projections" class="level1">
-<h1>South Polar Projections</h1>
+<section id="south-polar-projections" class="level3">
+<h3 class="anchored" data-anchor-id="south-polar-projections">South Polar Projections</h3>
 <p>There are methods to represent the spherical Earth on a flat surface. Using the two projection methods below, the South Polar region of the data used here can be displayed on a flat map.</p>
 <p><strong>I. Polar Stereographic Projection</strong></p>
 <p>The Polar Stereographic Projection is a projection method centered on the polar regions, and in this case, it is centered on the South Pole.</p>
@@ -196,7 +203,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>https://nsidc.org/data/user-resources/help-center/guide-nsidcs-polar-stereographic-projection</li>
 </ul>
-<div id="d2ccc6f4" class="cell" data-message="false" data-execution_count="4">
+<div id="12f1e3a9" class="cell" data-message="false" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -205,14 +212,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The blue areas in the map above represent Sea Ice Concentration, the concentration levels can be referenced using the color bar.</p>
+<p>The blue areas in the map above represent Sea Ice Concentration, and the concentration levels can be referenced using the color bar.</p>
 <p><strong>II. EPSG Code 3412</strong></p>
 <p>Another projection method is to use a location-specific EPSG code. The EPSG code for the South Pole is 3412, and the map below shows the projection using this code.</p>
 <p>Other EPSG Codes can be found from the link below.</p>
 <ul>
 <li>https://epsg.io/</li>
 </ul>
-<div id="af64282b" class="cell" data-execution_count="5">
+<div id="8301cf34" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -222,13 +229,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
+</section>
 <section id="adelie-penguin-telemetry-data" class="level1">
 <h1>Adelie Penguin Telemetry Data</h1>
 <p>Adelie Penguin Telemetry Data was obtained from NOAA NCEI and can be accessed through the link below.</p>
 <ul>
 <li>https://www.ncei.noaa.gov/node/6696</li>
 </ul>
-<div id="15c413b2" class="cell" data-execution_count="6">
+<div id="69e2de35" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -315,9 +323,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The table above shows a sample of the Telemetry Data</p>
-<p><strong>The Distribution of Penguins</strong></p>
-<div id="160a4d7a" class="cell" data-execution_count="8">
+<p>The table above shows a sample of the Telemetry Data.</p>
+<section id="the-distribution-of-penguins" class="level3">
+<h3 class="anchored" data-anchor-id="the-distribution-of-penguins">The Distribution of Penguins</h3>
+<div id="59691aee" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -328,10 +337,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>The distributions are shown above to better understand the data, allowing for further analysis based on different categories.</p>
 </section>
+</section>
 <section id="penguin-locations-on-the-projected-map" class="level1">
 <h1>Penguin Locations on the Projected Map</h1>
 <p>The locations of penguins on Earth are shown as follows.</p>
-<div id="136999d3" class="cell" data-execution_count="9">
+<div id="22b3a4f2" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -340,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div id="99249e85" class="cell" data-message="false" data-execution_count="10">
+<div id="6df1f6fb" class="cell" data-message="false" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -349,8 +359,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>**Penguin Tracking Considering Various Factors</p>
-<div id="29a22b5e" class="cell" data-message="false" data-execution_count="11">
+<section id="penguin-tracking-considering-various-factors" class="level3">
+<h3 class="anchored" data-anchor-id="penguin-tracking-considering-various-factors">Penguin Tracking Considering Various Factors</h3>
+<div id="fb0af0f8" class="cell" data-message="false" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -360,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <p>The plot above shows the daily movement paths of penguins by sex, illustrating the differences in movement patterns between sex groups.</p>
-<div id="b41239c4" class="cell" data-message="false" data-execution_count="12">
+<div id="d48ebade" class="cell" data-message="false" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -376,11 +387,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Argos Quality 2 - an error between 150 and 350 meters (with 4 or more messages)</li>
 </ul>
 </section>
+</section>
 <section id="monthly-tracking-with-sea-ice-concentration" class="level1">
 <h1>Monthly Tracking with Sea Ice Concentration</h1>
 <p><strong>Bird ID ADPE24 (Female)</strong></p>
 <p>The individual with the most data is used as a representative example below, and its paths over time are shown with the corresponding sea ice concentration below. This can show the relationship between Sea Ice Concentration and penguin movement patterns.</p>
-<div id="7c0e29f1" class="cell" data-message="false" data-results="hide" data-execution_count="15">
+<div id="5e630447" class="cell" data-message="false" data-results="hide" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
