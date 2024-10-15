@@ -46,7 +46,7 @@
     "href": "projects/hp.html",
     "title": "Housing Passports",
     "section": "",
-    "text": "This project is currently in progress."
+    "text": "This project is currently in progress.\nThe objective is to develop automated tools that extract insights from street-level imagery. The initial focus will be the improvement of planning information for climate-related disaster risk reduction in urban areas. This project will establish a foundation for future plans to transition into post-disaster impact assessments."
   },
   {
     "objectID": "project.html",
@@ -67,7 +67,7 @@
     "href": "note.html",
     "title": "Note",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPython\n\n\nTesting Python Code\n\n\n\nPython\n\n\n\nThis note is to check the compatibility between Quarto and Python\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nTesting R Code\n\n\n\nR\n\n\n\nThis note is to check the compatibility between Quarto and R\n\n\n\n\n\nOct 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nImage Labeling\n\n\nTips for Labeling Images\n\n\n\nMachine Learning\n\n\n\nEssential tips and best practices for efficient image labeling for training object detector\n\n\n\n\n\nOct 8, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nPython\n\n\nTesting Python Code\n\n\n\nPython\n\n\n\nThis note is to check the compatibility between Quarto and Python\n\n\n\n\n\nSep 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nTesting R Code\n\n\n\nR\n\n\n\nThis note is to check the compatibility between Quarto and R\n\n\n\n\n\nSep 10, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\n\n\n\n\n\n\nGit Cheat Sheet\n\n\nGit Commands & GitHub Workflow\n\n\n\nGit\n\n\n\nA quick reference to essential Git commands and workflows\n\n\n\n\n\nMar 7, 2024\n\n\nSung Woo Bak\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notes/R.html",

@@ -9,9 +9,9 @@
   {
     "listing": "/note.html",
     "items": [
+      "/notes/annotation.html",
       "/notes/python.html",
       "/notes/R.html",
-      "/notes/annotation.html",
       "/notes/git.html"
     ]
   }
