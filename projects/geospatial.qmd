@@ -36,7 +36,7 @@ warnings.filterwarnings("ignore")
 
 # Sea Ice Concentration Data
 
-Sea Ice Concentration data is obtained from the NOAA Polar Watch ERDDAP Data Server and NetCDF format data was used in this project. This data includes time, coordinates, and Sea Ice Concentration data.
+Sea Ice Concentration data was obtained from the NOAA Polar Watch ERDDAP Data Server and NetCDF format data was used in this project. This data includes time, coordinates, and Sea Ice Concentration data.
 
 Data and its details can be accessed through the link below.
 
@@ -83,7 +83,7 @@ sample_sea_ice = seaice_concen[time_ind, :, :][0]
 
 ```
 
-# South Polar Projections
+### South Polar Projections
 
 There are methods to represent the spherical Earth on a flat surface. Using the two projection methods below, the South Polar region of the data used here can be displayed on a flat map.
 
@@ -125,7 +125,7 @@ plt.show()
 
 ```
 
-The blue areas in the map above represent Sea Ice Concentration, the concentration levels can be referenced using the color bar.
+The blue areas in the map above represent Sea Ice Concentration, and the concentration levels can be referenced using the color bar.
 
 
 
@@ -176,7 +176,7 @@ penguin.head()
 
 ```
 
-The table above shows a sample of the Telemetry Data
+The table above shows a sample of the Telemetry Data.
 
 
 ```{python}
@@ -190,7 +190,7 @@ unique_year_month = penguin['Year_Month'].unique()
 
 ```
 
-**The Distribution of Penguins**
+### The Distribution of Penguins
 
 ```{python}
 #| echo: false
@@ -287,7 +287,8 @@ plt.show()
 
 ```
 
-**Penguin Tracking Considering Various Factors
+### Penguin Tracking Considering Various Factors
+
 
 ```{python}
 #| echo: false
@@ -524,3 +525,4 @@ plt.show()
 
 ```
 As shown above, ADPE24 has data from January to March 2003, and it traveled from the island towards areas with higher sea ice concentrations. The sea ice concentration varies by month, and it is clear that ADPE24 follows these changes. Although this is just one example, it suggests that there is a relationship between sea ice and penguin movement patterns.
+
