@@ -385,7 +385,7 @@ for bird_id, group in penguin_23_avg.groupby('BirdId'):
                     arrowprops=dict(edgecolor=arrow_color, arrowstyle='->'),
                     transform=ccrs.PlateCarree())
 
-ax.set_title('Penguin Travel Direction by Date (ArgosQuality 3 & 2)')
+ax.set_title('Penguin Tracking with Direction (ArgosQuality 3 & 2)')
 fig.colorbar(cs, ax=ax, location='right', shrink=0.8)
 plt.show()
 
