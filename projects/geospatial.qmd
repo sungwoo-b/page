@@ -50,19 +50,29 @@ Data and its details can be accessed through the link below.
 #| results: 'hide'
 
 # Generate URL
-def point_to_dataset(dataset_id, base_url='https://polarwatch.noaa.gov/erddap/griddap'):
-    base_url = base_url.rstrip('/')
-    full_url = '/'.join([base_url, dataset_id])
-    return nc.Dataset(full_url)
+#def point_to_dataset(dataset_id, base_url='https://polarwatch.noaa.gov/erddap/griddap'):
+#    base_url = base_url.rstrip('/')
+#    full_url = '/'.join([base_url, dataset_id])
+#    return nc.Dataset(full_url)
 
 # Unigue ID's
-south_month_url = 'nsidcG02202v4shmday' # Monthly
+#south_month_url = 'nsidcG02202v4shmday' # Monthly
 
 # Data
-da = point_to_dataset(south_month_url)
+#da = point_to_dataset(south_month_url)
 
 ```
 
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: 'hide'
+
+# The data is replaced with the downloaded version to ensure safety during publishing
+da = nc.Dataset('../data/nsidcG02202v4shmday_47c8_d8c6_99d8_U1728973265301.nc')
+
+```
 
 ```{python}
 #| echo: false
@@ -77,7 +87,7 @@ seaice_concen = da.variables['cdr_seaice_conc_monthly'][:]
 # Covent time format
 time_val = nc.num2date(time[:], units=time.units, calendar=time.calendar)
 
-sample_time = cftime.DatetimeGregorian(1996, 10, 1) # Desired time
+sample_time = cftime.DatetimeGregorian(2003, 1, 1)  # Desired time
 time_ind = np.where(time_val == sample_time)[0]     # Find matching indices
 sample_sea_ice = seaice_concen[time_ind, :, :][0]
 
@@ -526,3 +536,4 @@ plt.show()
 ```
 As shown above, ADPE24 has data from January to March 2003, and it traveled from the island towards areas with higher sea ice concentrations. The sea ice concentration varies by month, and it is clear that ADPE24 follows these changes. Although this is just one example, it suggests that there is a relationship between sea ice and penguin movement patterns.
 
+Note: To ensure safety during publishing, only limited data (downloaded version) was used, displaying just a single example.
