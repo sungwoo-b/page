@@ -14,6 +14,15 @@ slug: "template"
 keywords: ["machine learning", "AI", "data science"]
 ---
 
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: 'hide'
+
+```
+
 # title
 
 description

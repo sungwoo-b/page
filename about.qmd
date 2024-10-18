@@ -18,7 +18,7 @@ about:
 
 :::{#hero-heading}
 
-Hi, I'm Sung Woo Bak, a statistics graduate who enjoys uncovering insights through data analysis.<br> I currently have a deep interest in machine learning and look forward to study deeper into the field.
+Hi, I'm Sung Woo Bak, a statistics graduate who enjoys uncovering insights through data analysis.<br> I currently have a deep interest in machine learning and look forward to study deeper into this field.
 
 ## Education
 
@@ -27,7 +27,7 @@ Hi, I'm Sung Woo Bak, a statistics graduate who enjoys uncovering insights throu
 
 ## Experience
 
-American Red Cross<br> 
+**American Red Cross**<br> 
 Software Developer - Imagery Analysis<br> 
 September 2024 - present
 
