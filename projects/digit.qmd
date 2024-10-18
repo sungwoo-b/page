@@ -39,6 +39,7 @@ The data used in this project is the MNIST handwritten digit image dataset, whic
 #| echo: false
 #| warning: false
 #| message: false
+#| results: 'hide'
 
 def label_modification(label):
   '''
@@ -62,6 +63,7 @@ def label_modification(label):
 #| echo: false
 #| warning: false
 #| message: false
+#| results: 'hide'
 
 # Data set
 (train_img, train_label), (test_img, test_label) = mnist.load_data()
