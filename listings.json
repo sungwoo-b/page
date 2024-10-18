@@ -2,8 +2,9 @@
   {
     "listing": "/project.html",
     "items": [
-      "/projects/geospatial.html",
-      "/projects/hp.html"
+      "/projects/seaice.html",
+      "/projects/hp.html",
+      "/projects/digit.html"
     ]
   },
   {

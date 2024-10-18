@@ -7,10 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sung Woo Bak">
-<meta name="dcterms.date" content="2024-09-10">
-<meta name="description" content="Analysis of Sea Ice Concentration and Animal Telemetry in the South Pole Region">
+<meta name="dcterms.date" content="2023-12-11">
+<meta name="keywords" content="Image Classification, Singular Value Decomposition, Rank-k Approximation">
+<meta name="description" content="This project explores the use of k-approximation method for handwritten digit classification”">
 
-<title>Sea Ice Concentration and Animal Telemetry – Sungwoo</title>
+<title>Handwritten Digit Classification – Sungwoo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -126,19 +156,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sea-ice-concentration-data" id="toc-sea-ice-concentration-data" class="nav-link active" data-scroll-target="#sea-ice-concentration-data">Sea Ice Concentration Data</a>
-  <ul class="collapse">
-  <li><a href="#south-polar-projections" id="toc-south-polar-projections" class="nav-link" data-scroll-target="#south-polar-projections">South Polar Projections</a></li>
-  </ul></li>
-  <li><a href="#adelie-penguin-telemetry-data" id="toc-adelie-penguin-telemetry-data" class="nav-link" data-scroll-target="#adelie-penguin-telemetry-data">Adelie Penguin Telemetry Data</a>
-  <ul class="collapse">
-  <li><a href="#the-distribution-of-penguins" id="toc-the-distribution-of-penguins" class="nav-link" data-scroll-target="#the-distribution-of-penguins">The Distribution of Penguins</a></li>
-  </ul></li>
-  <li><a href="#penguin-locations-on-the-projected-map" id="toc-penguin-locations-on-the-projected-map" class="nav-link" data-scroll-target="#penguin-locations-on-the-projected-map">Penguin Locations on the Projected Map</a>
-  <ul class="collapse">
-  <li><a href="#penguin-tracking-considering-various-factors" id="toc-penguin-tracking-considering-various-factors" class="nav-link" data-scroll-target="#penguin-tracking-considering-various-factors">Penguin Tracking Considering Various Factors</a></li>
-  </ul></li>
-  <li><a href="#monthly-tracking-with-sea-ice-concentration" id="toc-monthly-tracking-with-sea-ice-concentration" class="nav-link" data-scroll-target="#monthly-tracking-with-sea-ice-concentration">Monthly Tracking with Sea Ice Concentration</a></li>
+  <li><a href="#mnist-handwritten-digit-data" id="toc-mnist-handwritten-digit-data" class="nav-link active" data-scroll-target="#mnist-handwritten-digit-data">MNIST Handwritten Digit Data</a></li>
+  <li><a href="#rank-k-approximation-using-svd" id="toc-rank-k-approximation-using-svd" class="nav-link" data-scroll-target="#rank-k-approximation-using-svd">Rank-k Approximation using SVD</a></li>
+  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
+  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion Matrix</a></li>
   </ul>
 </nav>
     </div>
@@ -147,17 +168,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sea Ice Concentration and Animal Telemetry</h1>
-<p class="subtitle lead">Geospatial Data Analysis</p>
+<h1 class="title">Handwritten Digit Classification</h1>
+<p class="subtitle lead">via Rank-k Approximation</p>
   <div class="quarto-categories">
-    <div class="quarto-category">Statistics</div>
-    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Linear Algebra</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Analysis of Sea Ice Concentration and Animal Telemetry in the South Pole Region
+    This project explores the use of k-approximation method for handwritten digit classification”
   </div>
 </div>
 
@@ -174,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 10, 2024</p>
+      <p class="date">December 11, 2023</p>
     </div>
   </div>
   
@@ -182,62 +203,72 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>Image Classification, Singular Value Decomposition, Rank-k Approximation</p>
+  </div>
+</div>
 
 </header>
 
 
-<p>The surface of Antarctica is largely covered by sea ice, and its area changes over time. This project aims to explore how these changes are related to the movement patterns of penguins, one of the continent’s representative species, as seasonal variations in sea ice may impact their behavior and migration patterns.</p>
-<section id="sea-ice-concentration-data" class="level1">
-<h1>Sea Ice Concentration Data</h1>
-<p>Sea Ice Concentration data was obtained from the NOAA Polar Watch ERDDAP Data Server and NetCDF format data was used in this project. This data includes time, coordinates, and Sea Ice Concentration data.</p>
-<p>Data and its details can be accessed through the link below.</p>
+<p>This project covers image classification using <strong>Rank-k Approximation</strong> via <strong>Singular Value Decomposition (SVD)</strong>. It demonstrates how extracting features from handwritten digit images can lead to effective and accurate classification, by reducing the dimensionality and focusing on important features.</p>
+<section id="mnist-handwritten-digit-data" class="level1">
+<h1>MNIST Handwritten Digit Data</h1>
+<p>The data used in this project is the MNIST handwritten digit image dataset, which is widely used for image classification tasks. For more detailed information, refer to the link provided below.</p>
 <ul>
-<li>https://polarwatch.noaa.gov/erddap/griddap/nsidcG02202v4shmday.html</li>
+<li>https://www.tensorflow.org/datasets/catalog/mnist</li>
 </ul>
-<section id="south-polar-projections" class="level3">
-<h3 class="anchored" data-anchor-id="south-polar-projections">South Polar Projections</h3>
-<p>There are methods to represent the spherical Earth on a flat surface. Using the two projection methods below, the South Polar region of the data used here can be displayed on a flat map.</p>
-<p><strong>I. Polar Stereographic Projection</strong></p>
-<p>The Polar Stereographic Projection is a projection method centered on the polar regions.<br> In this case, it is centered on the South Pole.</p>
-<p>Details about the Polar Stereographic Projection can be found from the link below.</p>
-<ul>
-<li>https://nsidc.org/data/user-resources/help-center/guide-nsidcs-polar-stereographic-projection</li>
-</ul>
-<div id="c979497c" class="cell" data-message="false" data-execution_count="5">
+<div id="f65b8697" class="cell" data-message="false" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+       0/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0s/step 2547712/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step11490434/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-6-output-1.png" width="636" height="720" class="figure-img"></p>
+<p><img src="digit_files/figure-html/cell-4-output-2.png" width="762" height="778" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The blue areas in the map above represent Sea Ice Concentration, and the concentration levels can be referenced using the color bar.</p>
-<p><strong>II. EPSG Code 3412</strong></p>
-<p>Another projection method is to use a location-specific EPSG code. The EPSG code for the South Pole is 3412, and the map below shows the projection using this code.</p>
-<p>Other EPSG Codes can be found from the link below.</p>
-<ul>
-<li>https://epsg.io/</li>
-</ul>
-<div id="e813b6e7" class="cell" data-execution_count="6">
+<p>Above are 16 sample images from the dataset. This dataset contains a total of <strong>70,000</strong> images, with <strong>60,000</strong> images used for the training set and <strong>10,000</strong> images for the test set.</p>
+</section>
+<section id="rank-k-approximation-using-svd" class="level1">
+<h1>Rank-k Approximation using SVD</h1>
+<p>In this project, Rank-k Approximation via Singular Value Decomposition (SVD) is used for classification method. This method extracts essential features and reduces dimensionality, improving efficiency. The SVD decomposition is as follows</p>
+<p><span class="math display">\[
+\text{Image Data} = U_k \Sigma_k V_k^T
+\]</span></p>
+<p>This approach captures important information from the data, enabling each digit image to be represented in a reduced form. The focus is on the <strong>k</strong> left singular vectors <strong>U</strong>, which capture the key features of the images. The rank-k approximation is as follows</p>
+<p><span class="math display">\[
+k\text{-Approximation} = \text{span}(U_k)
+\]</span></p>
+<p>The error between test images and the k-approximation is calculated using the Euclidean Norm, which measures the difference or distance between two data. The error is computed as</p>
+<p><span class="math display">\[
+\text{Error} = \| \text{Test Data Set} - \text{k-Approximation} \|_2
+\]</span></p>
+<p>The classification model predicts the digit by finding the smallest error, indicating the closest match between the test image and the k-approximation.</p>
+<p>The goal is to find the <strong>optimal k</strong> that captures most of the data while keeping k as small as possible.</p>
+</section>
+<section id="result" class="level1">
+<h1>Result</h1>
+<div id="a60ae0da" class="cell" data-message="false" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-7-output-1.png" width="636" height="720" class="figure-img"></p>
+<p><img src="digit_files/figure-html/cell-6-output-1.png" width="597" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>The above plot shows the classification rate for each value of <strong>k</strong>. For most cases, the classification rate is over 90% with k within 15, which demonstrates that dimension reduction was successful while capturing most of the data.</p>
 </section>
-</section>
-<section id="adelie-penguin-telemetry-data" class="level1">
-<h1>Adelie Penguin Telemetry Data</h1>
-<p>Adelie Penguin Telemetry Data was obtained from NOAA NCEI and can be accessed through the link below.</p>
-<ul>
-<li>https://www.ncei.noaa.gov/node/6696</li>
-</ul>
-<div id="5a2d1608" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<section id="confusion-matrix" class="level1">
+<h1>Confusion Matrix</h1>
+<div id="8586dbd9" class="cell" data-message="false" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -245,77 +276,148 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">BirdId</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">Breed Stage</th>
-<th data-quarto-table-cell-role="th">DateGMT</th>
-<th data-quarto-table-cell-role="th">TimeGMT</th>
-<th data-quarto-table-cell-role="th">Latitude</th>
-<th data-quarto-table-cell-role="th">Longitude</th>
-<th data-quarto-table-cell-role="th">ArgosQuality</th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">5</th>
+<th data-quarto-table-cell-role="th">6</th>
+<th data-quarto-table-cell-role="th">7</th>
+<th data-quarto-table-cell-role="th">8</th>
+<th data-quarto-table-cell-role="th">9</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>ADPE1</td>
-<td>female</td>
-<td>adult</td>
-<td>incubation</td>
-<td>28/10/1997</td>
-<td>7:54:00</td>
-<td>-62.171667</td>
-<td>-58.445000</td>
-<td>2</td>
+<td>969.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6.0</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>0.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>ADPE1</td>
-<td>female</td>
-<td>adult</td>
-<td>incubation</td>
-<td>28/10/1997</td>
-<td>9:32:00</td>
-<td>-62.173333</td>
-<td>-58.463333</td>
-<td>2</td>
+<td>0.0</td>
+<td>1130.0</td>
+<td>3.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>ADPE1</td>
-<td>female</td>
-<td>adult</td>
-<td>incubation</td>
-<td>28/10/1997</td>
-<td>18:15:00</td>
-<td>-62.158333</td>
-<td>-58.426667</td>
-<td>1</td>
+<td>17.0</td>
+<td>3.0</td>
+<td>962.0</td>
+<td>8.0</td>
+<td>4.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>14.0</td>
+<td>22.0</td>
+<td>0.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>ADPE1</td>
-<td>female</td>
-<td>adult</td>
-<td>incubation</td>
-<td>28/10/1997</td>
-<td>19:57:00</td>
-<td>-62.175000</td>
-<td>-58.441667</td>
-<td>2</td>
+<td>7.0</td>
+<td>1.0</td>
+<td>4.0</td>
+<td>941.0</td>
+<td>0.0</td>
+<td>23.0</td>
+<td>2.0</td>
+<td>8.0</td>
+<td>18.0</td>
+<td>6.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>ADPE1</td>
-<td>female</td>
-<td>adult</td>
-<td>incubation</td>
-<td>28/10/1997</td>
-<td>21:37:00</td>
-<td>-62.171667</td>
-<td>-58.445000</td>
-<td>2</td>
+<td>1.0</td>
+<td>8.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>957.0</td>
+<td>0.0</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>7.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>5.0</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>18.0</td>
+<td>1.0</td>
+<td>837.0</td>
+<td>9.0</td>
+<td>1.0</td>
+<td>14.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>9.0</td>
+<td>5.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>3.0</td>
+<td>9.0</td>
+<td>930.0</td>
+<td>0.0</td>
+<td>2.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>1.0</td>
+<td>15.0</td>
+<td>16.0</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>956.0</td>
+<td>3.0</td>
+<td>29.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>7.0</td>
+<td>3.0</td>
+<td>6.0</td>
+<td>16.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>3.0</td>
+<td>4.0</td>
+<td>911.0</td>
+<td>15.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>8.0</td>
+<td>8.0</td>
+<td>3.0</td>
+<td>6.0</td>
+<td>14.0</td>
+<td>6.0</td>
+<td>0.0</td>
+<td>12.0</td>
+<td>6.0</td>
+<td>946.0</td>
 </tr>
 </tbody>
 </table>
@@ -323,86 +425,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The table above shows a sample of the Telemetry Data.</p>
-<section id="the-distribution-of-penguins" class="level3">
-<h3 class="anchored" data-anchor-id="the-distribution-of-penguins">The Distribution of Penguins</h3>
-<div id="33ee40c9" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-10-output-1.png" width="758" height="758" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The distributions are shown above to better understand the data, allowing for further analysis based on different categories.</p>
-</section>
-</section>
-<section id="penguin-locations-on-the-projected-map" class="level1">
-<h1>Penguin Locations on the Projected Map</h1>
-<p>The locations of penguins on Earth are shown as follows.</p>
-<div id="b8dd2fe6" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-11-output-1.png" width="763" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="17dfc075" class="cell" data-message="false" data-execution_count="11">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-12-output-1.png" width="744" height="755" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="penguin-tracking-considering-various-factors" class="level3">
-<h3 class="anchored" data-anchor-id="penguin-tracking-considering-various-factors">Penguin Tracking Considering Various Factors</h3>
-<div id="447055aa" class="cell" data-message="false" data-execution_count="12">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-13-output-1.png" width="712" height="624" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The plot above shows the daily movement paths of penguins by sex, illustrating the differences in movement patterns between sex groups.</p>
-<div id="815127c3" class="cell" data-message="false" data-execution_count="13">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-14-output-1.png" width="712" height="624" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The plot above shows the daily movement paths, including direction, filtered only to include data with Argos Quality of 3 and 2, which indicate data accuracy.</p>
-<p>Note:</p>
-<ul>
-<li>Argos Quality 3 - an error of less than 150 meters (with 4 or more messages)</li>
-<li>Argos Quality 2 - an error between 150 and 350 meters (with 4 or more messages)</li>
-</ul>
-</section>
-</section>
-<section id="monthly-tracking-with-sea-ice-concentration" class="level1">
-<h1>Monthly Tracking with Sea Ice Concentration</h1>
-<p><strong>Bird ID ADPE24 (Female)</strong></p>
-<p>The individual with the most data is used as a representative example below, and its paths over time are shown with the corresponding sea ice concentration below. This can show the relationship between Sea Ice Concentration and penguin movement patterns.</p>
-<div id="210b88d7" class="cell" data-message="false" data-results="hide" data-execution_count="16">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="geospatial_files/figure-html/cell-17-output-1.png" width="734" height="758" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>As shown above, ADPE24 has data from January to March 2003, and it traveled from the island towards areas with higher sea ice concentrations. The sea ice concentration varies by month, and it is clear that ADPE24 follows these changes. Although this is just one sample, it suggests that there is a relationship between sea ice and penguin movement patterns.</p>
-<p>Note: To ensure safety during publishing, limited data was used, displaying just a single sample.</p>
+<p>The figure above shows the <strong>confusion matrix</strong> when <strong>k = 6</strong>, comparing the actual labels with the predicted labels. The distribution of results indicates that most predictions were correct.</p>
+<p>Modified: Oct 18, 2024.</p>
 
 
 </section>
