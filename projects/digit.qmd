@@ -104,10 +104,10 @@ $$
 \text{Image Data} = U_k \Sigma_k V_k^T
 $$
 
-This approach captures important information from the data, enabling each digit image to be represented in a reduced form. The focus is on the **k** left singular vectors **U**, which capture the key features of the images. The rank-k approximation is as follows
+This approach extracts essential information from the data, allowing each digit image to be represented in a reduced form. The focus is on the first **k** left singular vectors U, which capture the important features of the images. The k-th approximation is a linear combination of the vectors $u_1, u_2, \dots, u_k$, representing one element in their span.
 
 $$
-k\text{-Approximation} = \text{span}(U_k)
+A_k = \sum_{i=1}^{k} \alpha_i u_i
 $$
 
 The error between test images and the k-approximation is calculated using the Euclidean Norm, which measures the difference or distance between two data. The error is computed as

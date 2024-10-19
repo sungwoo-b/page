@@ -11,4 +11,4 @@ listing:
   filter-ui: [title, date]
 ---
 
-Here, I’ll be posting projects I’ve worked on, along with brief overviews.
+Here, I'll be posting brief overviews of the projects I've worked on.
