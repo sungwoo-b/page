@@ -14,7 +14,7 @@ toc: true
 
 In evaluating a pitcher's performance, various metrics such as ERA, WHIP, FIP, and SIERA are commonly used. However, these metrics can introduce noise and become less reliable, especially when the sample size is small. This project aims to define a stabilized metric that offers a more consistent and reliable method of assessing a pitcher's performance.
 
-**Stuff+** is a metric that focuses on evaluating each pitch by considering physical factors such as pitch location, speed, spin rate, and more. Unlike other metrics, which provide an overall performance, Stuff+ offers insights into the effectiveness of each individual pitch. This metric was conceptualized by Max Bay and Eno Sarris, and many people have created and tested their own Stuff+ models.
+**Stuff+** is a metric that focuses on evaluating each pitch by considering its physical characteristics such as pitch location, speed, spin rate, and more. Unlike other metrics, which provide an overall performance, Stuff+ offers insights into the effectiveness of each individual pitch. This metric was conceptualized by Max Bay and Eno Sarris, and many people have created and tested their own Stuff+ models.
 
 For more details about Stuff+, refer to the link provided below.
 
@@ -180,6 +180,9 @@ This Predicted Whiff% is used to ensure stable outputs because it relies on prob
 
 To find the Predicted Whiff%, Logistic Regression, XGBoost, and Random Forest were considered. Although algorithms like XGBoost were more robust compared to Random Forest, Logistic Regression provided the most consistent and reliable results. Therefore, Logistic Regression was used to predict Whiff% in this project.
 
+
+#### Correlation Matrix
+
 ```{python}
 #| echo: false
 #| warning: false
@@ -202,6 +205,10 @@ plt.show()
 ```
 
 The plot above shows the correlation matrix, with the last row and column representing Whiff%.
+
+
+#### Pitch Location vs CS% and Whiff%
+
 
 ```{python}
 #| echo: false
