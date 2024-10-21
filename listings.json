@@ -2,8 +2,9 @@
   {
     "listing": "/project.html",
     "items": [
-      "/projects/seaice.html",
       "/projects/hp.html",
+      "/projects/seaice.html",
+      "/projects/stuffplus.html",
       "/projects/digit.html"
     ]
   },

@@ -9,7 +9,7 @@
 <meta name="author" content="Sung Woo Bak">
 <meta name="dcterms.date" content="2023-12-11">
 <meta name="keywords" content="Image Classification, Singular Value Decomposition, Rank-k Approximation">
-<meta name="description" content="This project explores the use of k-approximation method for handwritten digit classification">
+<meta name="description" content="Exploration and implementation of Rank-k Approximation in handwritten digit classification">
 
 <title>Handwritten Digit Classification – Sungwoo</title>
 <style>
@@ -178,7 +178,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    This project explores the use of k-approximation method for handwritten digit classification
+    Exploration and implementation of Rank-k Approximation in handwritten digit classification
   </div>
 </div>
 
@@ -220,10 +220,10 @@ window.Quarto = {
 <ul>
 <li>https://www.tensorflow.org/datasets/catalog/mnist</li>
 </ul>
-<div id="36488e2f" class="cell" data-message="false" data-results="hide" data-execution_count="3">
+<div id="693cac78" class="cell" data-message="false" data-results="hide" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
-       0/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0s/step11124736/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step11490434/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step</code></pre>
+       0/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0s/step 2121728/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step11490434/11490434 ━━━━━━━━━━━━━━━━━━━━ 0s 0us/step</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -254,7 +254,7 @@ A_k = \sum_{i=1}^{k} \alpha_i u_i
 </section>
 <section id="result" class="level1">
 <h1>Result</h1>
-<div id="2ee6fa68" class="cell" data-message="false" data-execution_count="5">
+<div id="063f17bb" class="cell" data-message="false" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -267,7 +267,7 @@ A_k = \sum_{i=1}^{k} \alpha_i u_i
 </section>
 <section id="confusion-matrix" class="level1">
 <h1>Confusion Matrix</h1>
-<div id="127d6c0f" class="cell" data-message="false" data-execution_count="6">
+<div id="bbe3bb58" class="cell" data-message="false" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
