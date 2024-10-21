@@ -2,7 +2,7 @@
 title: "Housing Passports"
 subtitle: "In the Indonesian Context  – In Progress"
 description: "Developing automated tools for street level imagery analysis"
-date: 2024-09-01
+date: 2024-10-01
 categories: ["Machine Learning", "Compution Vision"]
 author: "Sung Woo Bak"
 draft: false

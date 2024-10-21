@@ -45,6 +45,7 @@ jobs:
           pip install pandas numpy matplotlib plotly seaborn pyyaml jupyter
           pip install cartopy xarray netCDF4 cftime IPython
           pip install scikit-learn tensorflow scipy
+          pip install pybaseball io contextlib
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

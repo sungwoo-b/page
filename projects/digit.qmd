@@ -1,7 +1,7 @@
 ---
 title: "Handwritten Digit Classification"
 subtitle: "via Rank-k Approximation"
-description: "This project explores the use of k-approximation method for handwritten digit classification"
+description: "Exploration and implementation of Rank-k Approximation in handwritten digit classification"
 date: 2023-12-11
 categories: ["Machine Learning", "Linear Algebra"]
 author: "Sung Woo Bak"
