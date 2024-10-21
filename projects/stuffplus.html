@@ -206,7 +206,7 @@ window.Quarto = {
 
 
 <p>In evaluating a pitcher’s performance, various metrics such as ERA, WHIP, FIP, and SIERA are commonly used. However, these metrics can introduce noise and become less reliable, especially when the sample size is small. This project aims to define a stabilized metric that offers a more consistent and reliable method of assessing a pitcher’s performance.</p>
-<p><strong>Stuff+</strong> is a metric that focuses on evaluating each pitch by considering physical factors such as pitch location, speed, spin rate, and more. Unlike other metrics, which provide an overall performance, Stuff+ offers insights into the effectiveness of each individual pitch. This metric was conceptualized by Max Bay and Eno Sarris, and many people have created and tested their own Stuff+ models.</p>
+<p><strong>Stuff+</strong> is a metric that focuses on evaluating each pitch by considering its physical characteristics such as pitch location, speed, spin rate, and more. Unlike other metrics, which provide an overall performance, Stuff+ offers insights into the effectiveness of each individual pitch. This metric was conceptualized by Max Bay and Eno Sarris, and many people have created and tested their own Stuff+ models.</p>
 <p>For more details about Stuff+, refer to the link provided below.</p>
 <ul>
 <li>https://library.fangraphs.com/pitching/stuff-location-and-pitching-primer/</li>
@@ -214,7 +214,7 @@ window.Quarto = {
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
 <p>The data used in this project is from <strong>Statcast</strong>, accessed via pybaseball, and includes every pitch from the 2023 MLB season.</p>
-<div id="1ac7d817" class="cell" data-message="false" data-results="hide" data-execution_count="2">
+<div id="86a393df" class="cell" data-message="false" data-results="hide" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -381,7 +381,7 @@ window.Quarto = {
 </section>
 <section id="distributions-of-pitch-related-variables" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="distributions-of-pitch-related-variables">Distributions of Pitch-Related Variables</h3>
-<div id="d1af4d1e" class="cell page-columns page-full" data-message="false" data-execution_count="3">
+<div id="504f377c" class="cell page-columns page-full" data-message="false" data-execution_count="3">
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -405,7 +405,9 @@ window.Quarto = {
 \]</span></p>
 <p>This Predicted Whiff% is used to ensure stable outputs because it relies on probability. This approach is based on the methodologies referenced from A. Jon (2023), Cameron Grove (2021), and RG Pitching (2023).</p>
 <p>To find the Predicted Whiff%, Logistic Regression, XGBoost, and Random Forest were considered. Although algorithms like XGBoost were more robust compared to Random Forest, Logistic Regression provided the most consistent and reliable results. Therefore, Logistic Regression was used to predict Whiff% in this project.</p>
-<div id="26391c02" class="cell page-columns page-full" data-message="false" data-execution_count="4">
+<section id="correlation-matrix" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="correlation-matrix">Correlation Matrix</h4>
+<div id="321ba04f" class="cell page-columns page-full" data-message="false" data-execution_count="4">
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -415,7 +417,10 @@ window.Quarto = {
 </div>
 </div>
 <p>The plot above shows the correlation matrix, with the last row and column representing Whiff%.</p>
-<div id="ee45e928" class="cell page-columns page-full" data-message="false" data-execution_count="5">
+</section>
+<section id="pitch-location-vs-cs-and-whiff" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="pitch-location-vs-cs-and-whiff">Pitch Location vs CS% and Whiff%</h4>
+<div id="a1c4da4f" class="cell page-columns page-full" data-message="false" data-execution_count="5">
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -426,9 +431,10 @@ window.Quarto = {
 </div>
 <p>The plots above show CS% (Called Strike Percentage) and Whiff% based on different pitch locations.</p>
 </section>
+</section>
 <section id="stuff" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="stuff">Stuff+</h3>
-<div id="e32fd865" class="cell page-columns page-full" data-message="false" data-execution_count="8">
+<div id="945aae28" class="cell page-columns page-full" data-message="false" data-execution_count="8">
 <div class="cell-output cell-output-display page-columns page-full">
 <div class="page-columns page-full">
 <figure class="figure page-columns page-full">
@@ -438,7 +444,7 @@ window.Quarto = {
 </div>
 </div>
 <p>The plot above displays the standardized Stuff+ for each pitch type. Each Stuff+ is centered around 100.</p>
-<div id="f4a504b3" class="cell" data-message="false" data-execution_count="9">
+<div id="0b9a4022" class="cell" data-message="false" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
