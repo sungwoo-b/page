@@ -29,11 +29,8 @@ Data that has been more than 5 days past the last update.
 def find_outofdate(url: str, threshold: int):
     tabs = pd.read_html(url)
     table = tabs[1]
-    table['outOfDate'] = table['outOfDate'].apply(lambda x: np.floor(float(re.sub(r'[^0-9.]', '', str(x)))))
+    table['outOfDate'] = table['outOfDate'].apply(lambda x: float(re.sub(r'[^0-9.]', '', str(x))))
     table = table[table['outOfDate'] > threshold]
-
-    #pd.set_option('display.max_colwidth', None)    
-    #display(table[['outOfDate', 'datasetID', 'title']])
 
     return table
 
