@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sungwoo-b.github.io/page/index.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
+    <lastmod>2024-11-22T19:24:21.871Z</lastmod>
   </url>
   <url>
-    <loc>https://sungwoo-b.github.io/page/notes/python.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/notes/git.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/about.html</loc>
-    <lastmod>2024-10-21T14:12:17.766Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/projects/hp.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/project.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/projects/seaice.html</loc>
-    <lastmod>2024-10-21T14:12:17.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/projects/stuffplus.html</loc>
-    <lastmod>2024-10-21T14:12:17.798Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/projects/digit.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sungwoo-b.github.io/page/note.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
+    <loc>https://sungwoo-b.github.io/page/notes/outofdate.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
   </url>
   <url>
     <loc>https://sungwoo-b.github.io/page/notes/annotation.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/note.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/projects/digit.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/projects/stuffplus.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/projects/seaice.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/project.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/projects/hp.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/about.html</loc>
+    <lastmod>2024-11-22T19:24:21.855Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/notes/git.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sungwoo-b.github.io/page/notes/python.html</loc>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
   </url>
   <url>
     <loc>https://sungwoo-b.github.io/page/notes/R.html</loc>
-    <lastmod>2024-10-21T14:12:17.794Z</lastmod>
+    <lastmod>2024-11-22T19:24:21.875Z</lastmod>
   </url>
 </urlset>

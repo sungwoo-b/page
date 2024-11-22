@@ -1,20 +1,21 @@
 [
   {
+    "listing": "/note.html",
+    "items": [
+      "/notes/outofdate.html",
+      "/notes/annotation.html",
+      "/notes/python.html",
+      "/notes/R.html",
+      "/notes/git.html"
+    ]
+  },
+  {
     "listing": "/project.html",
     "items": [
       "/projects/hp.html",
       "/projects/seaice.html",
       "/projects/stuffplus.html",
       "/projects/digit.html"
-    ]
-  },
-  {
-    "listing": "/note.html",
-    "items": [
-      "/notes/annotation.html",
-      "/notes/python.html",
-      "/notes/R.html",
-      "/notes/git.html"
     ]
   }
 ]
