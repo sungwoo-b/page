@@ -1,5 +1,5 @@
 ---
-title: "Find \"Out of Date\" Data"
+title: "Out of Date Data"
 draft: false
 image: "../img/barplot.png"
 layout: "blog"
@@ -42,6 +42,7 @@ def find_outofdate(url: str, threshold: int):
 #| warning: false
 #| message: false
 #| column: page
+
 
 url = 'https://polarwatch.noaa.gov/erddap/outOfDateDatasets.html?&outOfDate%3E=0.5'
 threshold = 5
