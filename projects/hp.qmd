@@ -1,6 +1,6 @@
 ---
-title: "Housing Passports"
-subtitle: "In the Indonesian Context  – In Progress"
+title: "Street Level Imagery for Humanitarian Analysis’"
+subtitle: "In Progress"
 description: "Developing automated tools for street level imagery analysis"
 date: 2024-10-01
 categories: ["Machine Learning", "Compution Vision"]
