@@ -1,5 +1,5 @@
 ---
-title: "Street Level Imagery for Humanitarian Analysis’"
+title: "Street Level Imagery for Humanitarian Analysis"
 subtitle: "In Progress"
 description: "Developing automated tools for street level imagery analysis"
 date: 2024-10-01
