@@ -24,6 +24,12 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages:
+<<<<<<< HEAD
+=======
+            any::knitr
+            any::rmarkdown
+            any::dplyr
+>>>>>>> 7fcaeda9a84135c140fd6b97ce2f5cb905718d63
             any::gt
             any::DT
             any::tidyverse
@@ -31,7 +37,11 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v4
         with:
+<<<<<<< HEAD
           python-version: '3.12'
+=======
+          python-version: '3.10'
+>>>>>>> 7fcaeda9a84135c140fd6b97ce2f5cb905718d63
 
       - name: Install Python dependencies
         run: |
