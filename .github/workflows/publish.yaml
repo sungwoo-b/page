@@ -24,20 +24,14 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages:
-            any::knitr
-            any::rmarkdown
-            any::dplyr
-            any::RColorBrewer
             any::gt
-            any::reshape2
             any::DT
-            any::plotly
-            any::lubridate
+            any::tidyverse
 
       - name: Install Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       - name: Install Python dependencies
         run: |
@@ -45,7 +39,6 @@ jobs:
           pip install pandas numpy matplotlib plotly seaborn pyyaml jupyter dash
           pip install cartopy xarray netCDF4 cftime IPython
           pip install scikit-learn tensorflow scipy
-          pip install pybaseball
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

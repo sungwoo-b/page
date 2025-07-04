@@ -70,7 +70,7 @@ Data and its details can be accessed through the link below.
 #| results: 'hide'
 
 # The data is replaced with the downloaded version to ensure safety during publishing
-da = nc.Dataset('../data/nsidcG02202v4shmday_47c8_d8c6_99d8_U1728973265301.nc')
+da = nc.Dataset('data/nsidcG02202v4shmday_47c8_d8c6_99d8_U1728973265301.nc')
 
 ```
 
@@ -182,7 +182,7 @@ Adelie Penguin Telemetry Data was obtained from NOAA NCEI and can be accessed th
 #| echo: false
 
 # Import Dataset
-penguin = pd.read_csv('../data/copa_adpe_ncei.csv')
+penguin = pd.read_csv('data/copa_adpe_ncei.csv')
 penguin.head()
 
 ```

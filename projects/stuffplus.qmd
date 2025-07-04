@@ -32,15 +32,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import seaborn as sns
-import io
-import contextlib
+#import io
+#import contextlib
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
 # API/Data
-from pybaseball import statcast, pitching_stats, statcast_pitcher, playerid_lookup
-import pybaseball
+#from pybaseball import statcast, pitching_stats, statcast_pitcher, playerid_lookup
+#import pybaseball
 
 ```
 
@@ -58,29 +58,31 @@ The data used in this project is from **Statcast**, accessed via pybaseball, and
 # Data 
 
 # pybaseball statcast
-start_date = '2023-03-29'
-end_date = '2023-10-02'
-pybaseball.cache.enable()
+#start_date = '2023-03-29'
+#end_date = '2023-10-02'
+#pybaseball.cache.enable()
 
-f = io.StringIO() # Remove message
-with contextlib.redirect_stdout(f), contextlib.redirect_stderr(f):
-    statcast_data = statcast(start_dt=start_date, end_dt=end_date)
+#f = io.StringIO() # Remove message
+#with contextlib.redirect_stdout(f), contextlib.redirect_stderr(f):
+#    statcast_data = statcast(start_dt=start_date, end_dt=end_date)
 
 # Pitch data
-interested_columns = ['player_name', 'pitch_name', 'description', 'release_speed', 'release_pos_x', 'release_pos_z', 'p_throws',
-                    'pfx_x', 'pfx_z', 'plate_x', 'plate_z', 'vx0', 'vy0', 'vz0', 'ax', 'ay', 'az',
-                    'effective_speed', 'release_spin_rate', 'release_extension', 'release_pos_y',  'spin_axis', 'delta_run_exp']
+#interested_columns = ['player_name', 'pitch_name', 'description', 'release_speed', 'release_pos_x', 'release_pos_z', 'p_throws',
+#                    'pfx_x', 'pfx_z', 'plate_x', 'plate_z', 'vx0', 'vy0', 'vz0', 'ax', 'ay', 'az',
+#                    'effective_speed', 'release_spin_rate', 'release_extension', 'release_pos_y',  'spin_axis', 'delta_run_exp']
 
-pitch = statcast_data[interested_columns]
+#pitch = statcast_data[interested_columns]
+
+pitch = pd.read_csv("data/pitch_data.csv") 
 
 # Drop NA
-na_counts = pitch.isna().sum()
-na_counts_list = [(column, na_count) for column, na_count in na_counts.items()]
-pitch = pitch.dropna()
+#na_counts = pitch.isna().sum()
+#na_counts_list = [(column, na_count) for column, na_count in na_counts.items()]
+#pitch = pitch.dropna()
 
 # Drop pitch types with small size
-temp = ['Slurve', 'Other', 'Forkball', 'Eephus', 'Knuckleball', 'Screwball', 'Slow Curve']
-pitch = pitch[~pitch['pitch_name'].isin(temp)]
+#temp = ['Slurve', 'Other', 'Forkball', 'Eephus', 'Knuckleball', 'Screwball', 'Slow Curve']
+#pitch = pitch[~pitch['pitch_name'].isin(temp)]
 
 # Convert p_throws to num value
 pitch['p_throws'] = pitch['p_throws'].apply(lambda x: 1 if x == 'R' else 0)
@@ -92,19 +94,19 @@ pitch['description_label'] = pitch['description'].astype('category').cat.codes
 pitch.head()
 
 # Whiff%
-whiff_total = ['hit_into_play', 'foul', 'swinging_strike', 'foul_tip', 'swinging_strike_blocked', 'foul_bunt', 'missed_bunt', 'bunt_foul_tip']
-whiff_criteria = ['swinging_strike', 'swinging_strike_blocked', 'missed_bunt']
+whiff_total = ['HIP', 'F', 'SS', 'FT', 'SSB', 'FB', 'MB', 'BFT']
+whiff_criteria = ['SS', 'SSB', 'MB']
 whiff_df = pitch[pitch['description'].isin(whiff_total)]
 whiff_df['whiff'] = whiff_df['description'].apply(lambda x: 1 if x in whiff_criteria else 0)
 
 # CS plus Whiff
-csw_total = ['hit_into_play', 'foul', 'swinging_strike', 'foul_tip', 'swinging_strike_blocked', 'foul_bunt', 'missed_bunt', 'bunt_foul_tip', 'called_strike']
-csw_criteria = ['swinging_strike', 'missed_bunt', 'swinging_strike_blocked', 'called_strike']
+csw_total = ['HIP', 'F', 'SS', 'FT', 'SSB', 'FB', 'MB', 'BFT', 'CS']
+csw_criteria = ['SS', 'MB', 'SSB', 'CS']
 csw_df = pitch[pitch['description'].isin(csw_total)]
 csw_df['csw'] = csw_df['description'].apply(lambda x: 1 if x in csw_criteria else 0)
 
 # CS
-cs_criteria = ['called_strike']
+cs_criteria = ['CS']
 pitch['cs'] = pitch['description'].apply(lambda x: 1 if x in cs_criteria else 0)
 
 # Data frame for each pitch type
@@ -283,8 +285,10 @@ def stuff_plus_log(pitch_data):
 
     return pitch_data
 
-pitch_types = ['4-Seam Fastball', 'Changeup', 'Curveball', 'Cutter', 'Knuckle Curve', 'Sinker', 'Slider', 'Split-Finger', 'Sweeper']
+pitch_types = ['FF', 'CH', 'CU', 'FC', 'KC', 'FS', 'SL', 'SF', 'SW']
 log_df = {}
+
+#print(pitch_dfs.keys())
 
 for pitch in pitch_types:
     log_df[pitch] = stuff_plus_log(pitch_dfs[pitch])
@@ -304,15 +308,15 @@ def calculate_stuff_mean(pitch_df, pitch_name):
     return pitch_df.groupby('player_name')['stuff+'].mean().reset_index()
 
 pitch_types = {
-    'fastball': log_df['4-Seam Fastball'],
-    'changeup': log_df['Changeup'],
-    'curveball': log_df['Curveball'],
-    'cutter': log_df['Cutter'],
-    'knuckle': log_df['Knuckle Curve'],
-    'sinker': log_df['Sinker'],
-    'slider': log_df['Slider'],
-    'splitter': log_df['Split-Finger'],
-    'sweeper': log_df['Sweeper']
+    'fastball': log_df['FF'],
+    'changeup': log_df['CH'],
+    'curveball': log_df['CU'],
+    'cutter': log_df['FC'],
+    'knuckle': log_df['KC'],
+    'sinker': log_df['FS'],
+    'slider': log_df['SL'],
+    'splitter': log_df['SF'],
+    'sweeper': log_df['SW']
 }
 
 stuff_plus_df = {name: calculate_stuff_mean(data, name) for name, data in pitch_types.items()}
@@ -332,15 +336,15 @@ fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(9, 8))
 axes = axes.flatten()
 
 pitch_display_names = {
-    'fastball': '4-Seam Fastball',
-    'changeup': 'Changeup',
-    'curveball': 'Curveball',
-    'cutter': 'Cutter',
-    'knuckle': 'Knuckle Curve',
-    'sinker': 'Sinker',
-    'slider': 'Slider',
-    'splitter': 'Split-Finger',
-    'sweeper': 'Sweeper'
+    'fastball': 'FF',
+    'changeup': 'CH',
+    'curveball': 'CU',
+    'cutter': 'FC',
+    'knuckle': 'KC',
+    'sinker': 'FS',
+    'slider': 'SL',
+    'splitter': 'SF',
+    'sweeper': 'SW'
 }
 
 for ax, (pitch_name, data) in zip(axes, stuff_plus_df.items()):
