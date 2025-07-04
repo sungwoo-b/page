@@ -13,7 +13,7 @@ about:
       href: https://github.com/sungwoo-b
     - icon: envelope
       text: Email
-      href: mailto:sbak@ucdavis.edu
+      href: mailto:sungwoo.ba@gmail.com
 ---
 
 :::{#hero-heading}

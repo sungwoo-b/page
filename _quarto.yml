@@ -9,6 +9,8 @@ website:
         text: Home
       - href: project.qmd
         text: Project
+      - href: statistics.qmd
+        text: Statistics
       - href: note.qmd
         text: Note
       - href: about.qmd
