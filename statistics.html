@@ -6,12 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sung Woo Bak">
-<meta name="dcterms.date" content="2023-12-11">
-<meta name="keywords" content="Image Classification, Singular Value Decomposition, Rank-k Approximation">
-<meta name="description" content="Exploration and implementation of Rank-k Approximation in handwritten digit classification">
 
-<title>Handwritten Digit Classification – Sungwoo</title>
+<title>Statistics – Sungwoo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,23 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,9 +69,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script>
 
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-title","listing-date"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -105,7 +129,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -115,7 +139,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Sungwoo</span>
     </a>
   </div>
@@ -126,23 +150,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project.html"> 
+    <a class="nav-link" href="./project.html"> 
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../statistics.html"> 
+    <a class="nav-link active" href="./statistics.html" aria-current="page"> 
 <span class="menu-text">Statistics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../note.html"> 
+    <a class="nav-link" href="./note.html"> 
 <span class="menu-text">Note</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -157,295 +181,47 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#mnist-handwritten-digit-data" id="toc-mnist-handwritten-digit-data" class="nav-link active" data-scroll-target="#mnist-handwritten-digit-data">MNIST Handwritten Digit Data</a></li>
-  <li><a href="#rank-k-approximation-using-svd" id="toc-rank-k-approximation-using-svd" class="nav-link" data-scroll-target="#rank-k-approximation-using-svd">Rank-k Approximation using SVD</a></li>
-  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
-  <li><a href="#confusion-matrix" id="toc-confusion-matrix" class="nav-link" data-scroll-target="#confusion-matrix">Confusion Matrix</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Handwritten Digit Classification</h1>
-<p class="subtitle lead">via Rank-k Approximation</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">Machine Learning</div>
-    <div class="quarto-category">Linear Algebra</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Exploration and implementation of Rank-k Approximation in handwritten digit classification
-  </div>
+<h1 class="title">Statistics</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sung Woo Bak </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 11, 2023</p>
-    </div>
-  </div>
   
     
   </div>
   
 
-<div>
-  <div class="keywords">
-    <div class="block-title">Keywords</div>
-    <p>Image Classification, Singular Value Decomposition, Rank-k Approximation</p>
-  </div>
-</div>
 
 </header>
 
 
-<p>This project covers image classification using <strong>Rank-k Approximation</strong> via <strong>Singular Value Decomposition (SVD)</strong>. It demonstrates how extracting features from handwritten digit images can lead to effective and accurate classification, by reducing the dimensionality and focusing on important features.</p>
-<section id="mnist-handwritten-digit-data" class="level1">
-<h1>MNIST Handwritten Digit Data</h1>
-<p>The data used in this project is the MNIST handwritten digit image dataset, which is widely used for image classification tasks. For more detailed information, refer to the link provided below.</p>
-<ul>
-<li>https://www.tensorflow.org/datasets/catalog/mnist</li>
-</ul>
-<div id="85204a46" class="cell" data-message="false" data-results="hide" data-execution_count="3">
-<div class="cell-output cell-output-stdout">
-<div class="ansi-escaped-output">
-<pre>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+<p>Statistics Notes</p>
 
 
-<span class="ansi-bold">       0/11490434</span> <span class="ansi-white-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 0s/step
-
-<span class="ansi-bold"> 2580480/11490434</span> <span class="ansi-green-fg">━━━━</span><span class="ansi-white-fg">━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 0us/step
-
-<span class="ansi-bold">11490434/11490434</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">0s</span> 0us/step
-</pre>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="digit_files/figure-html/cell-4-output-2.png" width="762" height="778" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Above are 16 sample images from the dataset. This dataset contains a total of <strong>70,000</strong> images, with <strong>60,000</strong> images used for the training set and <strong>10,000</strong> images for the test set.</p>
-</section>
-<section id="rank-k-approximation-using-svd" class="level1">
-<h1>Rank-k Approximation using SVD</h1>
-<p>In this project, Rank-k Approximation via Singular Value Decomposition (SVD) is used for classification method. This method extracts essential features and reduces dimensionality, improving efficiency. The SVD decomposition is as follows</p>
-<p><span class="math display">\[
-\text{Image Data} = U_k \Sigma_k V_k^T
-\]</span></p>
-<p>This approach extracts essential information from the data, allowing each digit image to be represented in a reduced form. The focus is on the first <strong>k</strong> left singular vectors U, which capture the important features of the images. The k-th approximation is a linear combination of the vectors <span class="math inline">\(u_1, u_2, \dots, u_k\)</span>, representing one element in their span.</p>
-<p><span class="math display">\[
-A_k = \sum_{i=1}^{k} \alpha_i u_i
-\]</span></p>
-<p>The error between test images and the k-approximation is calculated using the Euclidean Norm, which measures the difference or distance between two data. The error is computed as</p>
-<p><span class="math display">\[
-\text{Error} = \| \text{Test Data Set} - \text{k-Approximation} \|_2
-\]</span></p>
-<p>The classification model predicts the digit by finding the smallest error, indicating the closest match between the test image and the k-approximation.</p>
-<p>The goal is to find the <strong>optimal k</strong> that captures most of the data while keeping k as small as possible.</p>
-</section>
-<section id="result" class="level1">
-<h1>Result</h1>
-<div id="22c6790e" class="cell" data-message="false" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="digit_files/figure-html/cell-6-output-1.png" width="597" height="449" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>The above plot shows the classification rate for each value of <strong>k</strong>. For most cases, the classification rate is over 90% with k within 15, which demonstrates that dimension reduction was successful while capturing most of the data.</p>
-</section>
-<section id="confusion-matrix" class="level1">
-<h1>Confusion Matrix</h1>
-<div id="76770575" class="cell" data-message="false" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">0</th>
-<th data-quarto-table-cell-role="th">1</th>
-<th data-quarto-table-cell-role="th">2</th>
-<th data-quarto-table-cell-role="th">3</th>
-<th data-quarto-table-cell-role="th">4</th>
-<th data-quarto-table-cell-role="th">5</th>
-<th data-quarto-table-cell-role="th">6</th>
-<th data-quarto-table-cell-role="th">7</th>
-<th data-quarto-table-cell-role="th">8</th>
-<th data-quarto-table-cell-role="th">9</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>969.0</td>
-<td>0.0</td>
-<td>2.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>6.0</td>
-<td>1.0</td>
-<td>2.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>0.0</td>
-<td>1130.0</td>
-<td>3.0</td>
-<td>1.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>1.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>17.0</td>
-<td>3.0</td>
-<td>962.0</td>
-<td>8.0</td>
-<td>4.0</td>
-<td>0.0</td>
-<td>2.0</td>
-<td>14.0</td>
-<td>22.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>7.0</td>
-<td>1.0</td>
-<td>4.0</td>
-<td>941.0</td>
-<td>0.0</td>
-<td>23.0</td>
-<td>2.0</td>
-<td>8.0</td>
-<td>18.0</td>
-<td>6.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>1.0</td>
-<td>8.0</td>
-<td>1.0</td>
-<td>0.0</td>
-<td>957.0</td>
-<td>0.0</td>
-<td>4.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>7.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>5.0</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>18.0</td>
-<td>1.0</td>
-<td>837.0</td>
-<td>9.0</td>
-<td>1.0</td>
-<td>14.0</td>
-<td>4.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>9.0</td>
-<td>5.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>3.0</td>
-<td>9.0</td>
-<td>930.0</td>
-<td>0.0</td>
-<td>2.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>1.0</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>1.0</td>
-<td>6.0</td>
-<td>0.0</td>
-<td>1.0</td>
-<td>956.0</td>
-<td>3.0</td>
-<td>29.0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>7.0</td>
-<td>3.0</td>
-<td>6.0</td>
-<td>16.0</td>
-<td>5.0</td>
-<td>4.0</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>911.0</td>
-<td>15.0</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>8.0</td>
-<td>8.0</td>
-<td>3.0</td>
-<td>6.0</td>
-<td>14.0</td>
-<td>6.0</td>
-<td>0.0</td>
-<td>12.0</td>
-<td>6.0</td>
-<td>946.0</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
 
 </div>
-</div>
-</div>
-<p>The figure above shows the <strong>confusion matrix</strong> when <strong>k = 6</strong>, comparing the actual labels with the predicted labels. The distribution of results indicates that most predictions were correct.</p>
-<p>Modified: Oct 18, 2024.</p>
-
-
-</section>
-
-</main> <!-- /main -->
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
